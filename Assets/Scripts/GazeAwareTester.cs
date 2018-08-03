@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Tobii.Gaming;
 using UnityEngine;
+//using UnityEngine.UI;
 
 namespace EyeHelpers
 {
@@ -12,11 +13,11 @@ namespace EyeHelpers
 
         public GazeAware gazeAware;
         public Renderer targetRenderer;
+        //public InputField inputField;
 
         private bool hasFocus = false;
         private Timer typingTimer = new Timer();
-        private float typingTime = 2f;
-
+        private float typingTime = 2f;        
 
         void Awake()
         {
@@ -50,6 +51,7 @@ namespace EyeHelpers
                 if (typingTimer.HasPastSince(typingTime))
                 {
                     ChangeColor(gazeAware.HasGazeFocus);
+                    //inputField.text += targetRenderer.name;
                     //Debug.Log(targetRenderer.name + "Typing!!!");
                 }
             }
@@ -62,5 +64,10 @@ namespace EyeHelpers
             if (state) targetRenderer.material.color = focusedColor;
             else targetRenderer.material.color = normalColor;
         }
+
+        //void IsGazing()
+        //{
+            
+        //}
     }
 }
