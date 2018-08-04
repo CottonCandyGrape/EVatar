@@ -233,6 +233,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &49529803
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +287,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &49529806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -405,6 +409,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &66085073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,6 +605,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &82489289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,6 +686,7 @@ GameObject:
   - component: {fileID: 169084689}
   - component: {fileID: 169084688}
   - component: {fileID: 169084687}
+  - component: {fileID: 169084690}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -801,6 +810,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 169084685}
+--- !u!114 &169084690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169084685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39da83068f45dca44b81fb613bba07ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  focusedColor: {r: 1, g: 0, b: 0, a: 1}
+  gazeAware: {fileID: 0}
+  targetRenderer: {fileID: 0}
+  inputField: {fileID: 169084687}
+  text: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,6 +1012,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &260818696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1078,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &260818700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,6 +1335,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &320298508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,6 +1445,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &347135926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1601,6 +1635,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &369143775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1689,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &369143778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1773,6 +1811,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &396072708
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1893,6 +1933,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &522843199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2013,6 +2055,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &586128945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2133,6 +2177,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &590990870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2299,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &623609904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,6 +2421,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &635267673
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2505,6 +2555,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &642068467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,6 +2789,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &664868547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2857,6 +2911,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &672432119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2977,6 +3033,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &706100721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,6 +3211,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &722268645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3333,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &808015221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3408,6 +3470,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &882781540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3596,6 +3660,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &958493609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,6 +3911,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &1112688439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4152,6 +4220,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1203962836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4272,6 +4342,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &1252780762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4554,6 +4626,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &1433635915
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,6 +4680,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1433635918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4738,6 +4814,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &1471865088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5025,6 +5103,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &1567101313
 GameObject:
   m_ObjectHideFlags: 0
@@ -5077,6 +5157,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1567101316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5242,6 +5324,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1619761845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5329,6 +5413,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &1894930974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5437,6 +5523,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1974924189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5569,6 +5657,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &1992506604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5689,6 +5779,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &1996394447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5797,6 +5889,8 @@ MonoBehaviour:
   focusedColor: {r: 1, g: 0, b: 0, a: 1}
   gazeAware: {fileID: 0}
   targetRenderer: {fileID: 0}
+  inputField: {fileID: 0}
+  text: {fileID: 0}
 --- !u!114 &2113485495
 MonoBehaviour:
   m_ObjectHideFlags: 0
