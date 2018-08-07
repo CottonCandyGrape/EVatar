@@ -7,11 +7,14 @@ public class SpriteClickTest : MonoBehaviour
 {
     public GameObject targetSprite;
     public InputField inputField;
+    public AudioSource audioSource;
 
     void Awake()
     {
         if (targetSprite == null)
             targetSprite = GetComponent<GameObject>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -20,8 +23,10 @@ public class SpriteClickTest : MonoBehaviour
         {
             targetSprite = GetClickedSprite();
             inputField.text += targetSprite.name;
+            audioSource.Play();
         }
     }
+
 
     private GameObject GetClickedSprite()
     {

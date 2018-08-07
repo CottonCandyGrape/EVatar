@@ -14,6 +14,7 @@ namespace EyeHelpers
         public GazeAware gazeAware;
         public Renderer targetRenderer;
         public InputField inputField;
+        public AudioSource audioSource;
 
         private bool hasFocus = false;
         private Timer typingTimer = new Timer();
@@ -26,6 +27,8 @@ namespace EyeHelpers
 
             if (targetRenderer == null)
                 targetRenderer = GetComponent<Renderer>();
+
+            audioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -41,7 +44,8 @@ namespace EyeHelpers
                 if (typingTimer.HasPastSince(typingTime))
                 {
                     ChangeColor(gazeAware.HasGazeFocus);
-                    inputField.text = targetRenderer.name;
+                    inputField.text += targetRenderer.name;
+                    audioSource.Play();
                 }
             }
             else
