@@ -7,7 +7,8 @@ public class SpriteClickTest : MonoBehaviour
 {
     public GameObject targetSprite;
     public InputField inputField;
-    public AudioSource audioSource;
+
+    private AudioSource audioSource;
 
     void Awake()
     {

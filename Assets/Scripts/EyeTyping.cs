@@ -14,11 +14,12 @@ namespace EyeHelpers
         public GazeAware gazeAware;
         public Renderer targetRenderer;
         public InputField inputField;
-        public AudioSource audioSource;
 
-        private bool hasFocus = false;
+
+        //private bool hasFocus = false;
         private Timer typingTimer = new Timer();
-        private float typingTime = 2f;        
+        private float typingTime = 2f;
+        private AudioSource audioSource;
 
         void Awake()
         {
@@ -32,24 +33,30 @@ namespace EyeHelpers
         }
 
         void Update()
-        {            
-            Typing();
+        {
+            IsGazing();
+        }
+
+        void IsGazing()
+        {
+            if (gazeAware.HasGazeFocus) //쳐다보고 있을때
+            {
+                typingTimer.Update(Time.deltaTime);
+                if (typingTimer.HasPastSince(typingTime)) //타이핑 시간이 지났을때
+                    Typing();                
+            }
+            else if (!gazeAware.HasGazeFocus) //안 쳐다보고 있을때
+            {
+                typingTimer.Reset();
+                ChangeColor(gazeAware.HasGazeFocus);
+            }
         }
 
         void Typing()
         {
-            if (gazeAware.HasGazeFocus)
-            {
-                typingTimer.Update(Time.deltaTime);
-                if (typingTimer.HasPastSince(typingTime))
-                {
-                    ChangeColor(gazeAware.HasGazeFocus);
-                    inputField.text += targetRenderer.name;
-                    audioSource.Play();
-                }
-            }
-            else
-                ChangeColor(gazeAware.HasGazeFocus);
+            inputField.text += targetRenderer.name;
+            ChangeColor(gazeAware.HasGazeFocus);
+            audioSource.Play();
         }
 
         void ChangeColor(bool state)
