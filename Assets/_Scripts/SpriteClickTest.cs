@@ -28,7 +28,6 @@ public class SpriteClickTest : MonoBehaviour
         }
     }
 
-
     private GameObject GetClickedSprite()
     {
         RaycastHit hit;
@@ -37,10 +36,8 @@ public class SpriteClickTest : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (true == (Physics.Raycast(ray.origin, ray.direction * 10, out hit)))
-        {
             target = hit.collider.gameObject;
-        }
-
+        
         return target;
     }
 }
