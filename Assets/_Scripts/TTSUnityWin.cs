@@ -15,22 +15,20 @@ public class TTSUnityWin : MonoBehaviour
         input = GameObject.Find("InputField1").GetComponent<InputField>();
     }
 
-    void Update()
+    public void TtsButton()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            voice.Volume = 100; // Volume (no xml)
-            voice.Rate = 0;  //   Rate (no xml)
-            voice.Speak("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='ko-KO'>"
-                        //+"반갑습니다.이부분이 그냥출력"
-                        + input.text
-                        + "</speak>",
-                        SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-            voice.Pause();
-        if (Input.GetKeyDown(KeyCode.R))        
-            voice.Resume();
+        Invoke("Ttsstar", 2);
+    }
+
+    void Ttsstar()
+    {
+        voice.Volume = 100; // Volume (no xml)
+        voice.Rate = 0;  //   Rate (no xml)
+        voice.Speak("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='ko-KO'>"
+                    //+"반갑습니다.이부분이 그냥출력"
+                    + input.text
+                    + "</speak>",
+                    SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
     }
 }
 

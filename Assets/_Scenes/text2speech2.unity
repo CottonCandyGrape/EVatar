@@ -835,8 +835,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1919667712}
-        m_MethodName: GetButton
+      - m_Target: {fileID: 1919667714}
+        m_MethodName: TtsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
