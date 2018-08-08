@@ -20,12 +20,18 @@ public class SpriteClickTest : MonoBehaviour
 
     void Update()
     {
+        //inputField.ActivateInputField();
         if (true == Input.GetMouseButtonUp(0))
         {
             targetSprite = GetClickedSprite();
+            //inputField.ActivateInputField();
             inputField.text += targetSprite.name;
+            inputField.Select();
             audioSource.Play();
         }
+        inputField.ActivateInputField();
+        //inputField.MoveTextStart(true);
+        //inputField.Select();
     }
 
     private GameObject GetClickedSprite()
