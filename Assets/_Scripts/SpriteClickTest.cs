@@ -17,6 +17,8 @@ public class SpriteClickTest : MonoBehaviour
         if (targetSprite == null)
             targetSprite = gameObject;
 
+        Input.imeCompositionMode = IMECompositionMode.On;
+
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -24,10 +26,12 @@ public class SpriteClickTest : MonoBehaviour
     {
         if (true == Input.GetMouseButtonUp(0))
         {
-            if (targetSprite) targetSprite = GetClickedSprite();
-            //inputField.text += targetSprite.name;
-            eInputField.AppendString(targetSprite.name);
-            audioSource.Play();
+            targetSprite = GetClickedSprite();
+            if (targetSprite != null)
+            {
+                eInputField.AppendChar(targetSprite.name.ToCharArray()[0]);
+                audioSource.Play();
+            }
         }
     }
 

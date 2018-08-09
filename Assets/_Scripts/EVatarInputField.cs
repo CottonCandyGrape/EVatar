@@ -7,6 +7,18 @@ namespace EyeHelpers
 {
     public class EVatarInputField : InputField
     {
+        public void AppendChar(char input)
+        {
+            Append(input);
+        }
+
+        protected override void Append(char input)
+        {
+            base.Append(input);
+            Validate(text, text.Length, input);
+            textComponent.text = this.text;
+        }
+
         public void AppendString(string input)
         {
             this.Append(input);
@@ -15,7 +27,8 @@ namespace EyeHelpers
         protected override void Append(string input)
         {
             base.Append(input);
-            Debug.Log("Append Called");
+            
+            textComponent.text = this.text;
         }
     }
 }
