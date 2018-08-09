@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Tobii.Gaming;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace EyeHelpers
 {
@@ -12,7 +13,7 @@ namespace EyeHelpers
         public Color focusedColor = Color.red;
 
         public GazeAware gazeAware;
-        public Renderer targetRenderer;
+        public Image targetImage;
         public InputField inputField;
 
 
@@ -20,16 +21,22 @@ namespace EyeHelpers
         private Timer typingTimer = new Timer();
         private float typingTime = 2f;
         private AudioSource audioSource;
+        private RectTransform rectTransform;
+        private GazePoint gazePoint;
 
         void Awake()
         {
             if (gazeAware == null)
                 gazeAware = GetComponent<GazeAware>();
 
-            if (targetRenderer == null)
-                targetRenderer = GetComponent<Renderer>();
+            if (targetImage == null)
+                targetImage = GetComponent<Image>();
+
+            rectTransform = GetComponent<RectTransform>();
 
             audioSource = GetComponent<AudioSource>();
+
+            gazePoint = TobiiAPI.GetGazePoint();
         }
 
         void Update()
@@ -39,13 +46,16 @@ namespace EyeHelpers
 
         void IsGazing()
         {
-            if (gazeAware.HasGazeFocus) //쳐다보고 있을때
+            if (gazeAware.HasGazeFocus)
+            //if (Math.Abs(rectTransform.localPosition.x) >= Math.Abs(gazePoint.Screen.x)
+            //    && Math.Abs(rectTransform.localPosition.y) >= Math.Abs(gazePoint.Screen.y)) //쳐다보고 있을때
             {
                 typingTimer.Update(Time.deltaTime);
+                Debug.Log("쳐다본다");
                 if (typingTimer.HasPastSince(typingTime)) //타이핑 시간이 지났을때
-                    Typing();                
+                    Typing();
             }
-            else if (!gazeAware.HasGazeFocus) //안 쳐다보고 있을때
+            else /*if (!gazeAware.HasGazeFocus) *///안 쳐다보고 있을때
             {
                 typingTimer.Reset();
                 ChangeColor(gazeAware.HasGazeFocus);
@@ -54,15 +64,15 @@ namespace EyeHelpers
 
         void Typing()
         {
-            inputField.text += targetRenderer.name;
+            inputField.text += targetImage.name;
             ChangeColor(gazeAware.HasGazeFocus);
-            audioSource.Play();
+            //audioSource.Play();
         }
 
         void ChangeColor(bool state)
         {
-            if (state) targetRenderer.material.color = focusedColor;
-            else targetRenderer.material.color = normalColor;
+            if (state) targetImage.material.color = focusedColor;
+            else targetImage.material.color = normalColor;
         }
     }
 }

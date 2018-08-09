@@ -1,21 +1,17 @@
 fileFormatVersion: 2
-guid: 4349e78e4add6e945aa6cce397d4afa5
+guid: fe798827c0e26454393e66e558fbe4b3
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "\u3131"
-    21300002: "\u3134"
-    21300004: "\u3137"
-    21300006: "\u3139"
-    21300008: "\u3141"
-    21300010: "\u3142"
-    21300012: "\u3145"
-    21300014: "\u3147"
-    21300016: "\u3148"
-    21300018: "\u314A"
-    21300020: "\u314B"
-    21300022: "\u314C"
-    21300024: "\u314D"
-    21300026: "\u314E"
+    21300000: 1
+    21300002: 2
+    21300004: 3
+    21300006: 4
+    21300008: 5
+    21300010: 6
+    21300012: 7
+    21300014: 8
+    21300016: 9
+    21300018: 0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -50,7 +46,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -120,281 +116,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u3131"
+      name: 1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 119
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a12d0c3281e6b7a4db90f49a7c6514c8
+      spriteID: 669e3cb8668a5db4585b183b7116ef9c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3134"
+      name: 2
       rect:
         serializedVersion: 2
         x: 153
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62228b2637224be479f4e48c4abaff7f
+      spriteID: f13215f283c017c4884412c229adf1a4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3137"
+      name: 3
       rect:
         serializedVersion: 2
-        x: 306
+        x: 307
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4cbc9ff4d97f60498e1515d5faf71b0
+      spriteID: e12fc290d4ce3e44191cfb3d69d0fa93
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3139"
+      name: 4
       rect:
         serializedVersion: 2
         x: 460
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4771346cce78974d9d51c3c6ebe26a3
+      spriteID: 4a7d939f33678c843b45866e2408fab5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3141"
+      name: 5
       rect:
         serializedVersion: 2
         x: 613
         y: 0
-        width: 120
+        width: 119
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e0827d0f282a734fa363afa84078964
+      spriteID: 7c5fa99af501b164198018f78ce2c866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3142"
+      name: 6
       rect:
         serializedVersion: 2
         x: 767
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8645ad6911c2c34680bf5875ff8b102
+      spriteID: a7bdda2ad0305ad4c9dd1b7c32583122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3145"
+      name: 7
       rect:
         serializedVersion: 2
-        x: 922
+        x: 920
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b90ad241243e96c49a99fa41667ab777
+      spriteID: 39cbcffee3fc0484ca6e24a1f9f95445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3147"
+      name: 8
       rect:
         serializedVersion: 2
         x: 1073
         y: 0
-        width: 120
+        width: 119
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5aede2372b8bb3a4e9b4abb9d3f9e0dd
+      spriteID: bf6d1935dfdbb1548abdad88996c50f4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u3148"
+      name: 9
       rect:
         serializedVersion: 2
         x: 1227
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec57af924009c1346bf83696bc9a40e3
+      spriteID: 976e3f23622de9047adf6870a326b6dc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u314A"
+      name: 0
       rect:
         serializedVersion: 2
         x: 1380
         y: 0
-        width: 120
+        width: 118
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60b428206fe0f664f84e12f981a9321a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u314B"
-      rect:
-        serializedVersion: 2
-        x: 1534
-        y: 0
-        width: 120
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 106835e5795f0dd46ae5a78a3cfc0411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u314C"
-      rect:
-        serializedVersion: 2
-        x: 1687
-        y: 0
-        width: 120
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e02accb60b1cef4995652ddc4d7c123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u314D"
-      rect:
-        serializedVersion: 2
-        x: 1841
-        y: 0
-        width: 120
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f03ce5f9454ffae499fce9925486d815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\u314E"
-      rect:
-        serializedVersion: 2
-        x: 1994
-        y: 0
-        width: 119
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2df1e7802f5f12944a58d24f2b66f7c0
+      spriteID: 8a13ef3714fe4f145acfdaba1951ebc9
       vertices: []
       indices: 
       edges: []
@@ -402,7 +318,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0a06a65955f2ef745b440d77af8e8152
+    spriteID: 4829dc25e51bda2429bc8cc4f37e12fa
     vertices: []
     indices: 
     edges: []

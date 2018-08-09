@@ -8,9 +8,12 @@ namespace EyeHelpers
     {
         private float elapsedTime = 0f;
 
+        private float lastGameTime = 0f;
+
         public void Update(float deltaTime)
         {
             elapsedTime += deltaTime;
+            lastGameTime = Time.realtimeSinceStartup;
         }
 
         public float GetElapsedTime
@@ -18,9 +21,15 @@ namespace EyeHelpers
             get { return elapsedTime; }
         }
 
+        public float GetLastGameTime
+        {
+            get { return lastGameTime; }
+        }
+
         public void Reset()
         {
             elapsedTime = 0f;
+            lastGameTime = 0f;
         }
 
         public bool HasPastSince(float time)
