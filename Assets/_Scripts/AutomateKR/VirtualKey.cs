@@ -1,51 +1,120 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using SpeechLib;
 
-public class VirtualKey : MonoBehaviour
+namespace EyeHelpers
 {
-
-    static public VirtualKeyboard _Keybord = null;
-    public enum kType { kCharacter, kOther, kReturn, kSpace, kBackspace, kShift, kTab, kCapsLock, kHangul }
-    public char KeyCharacter;
-    public kType KeyType = kType.kCharacter;
-
-    private bool mKeepPresed;
-    public bool KeepPressed
+    public class VirtualKey : MonoBehaviour
     {
-        set { mKeepPresed = value; }
-        get { return mKeepPresed; }
-    }
+        static public VirtualKeyboard _Keybord = null;
+        public enum kType { kCharacter, kOther, kReturn, kSpace, kBackspace, kShift, kTab, kCapsLock, kHangul }
+        public char KeyCharacter;
+        public kType KeyType = kType.kCharacter;
+        public Sprite hoverImage;
+        public InputField inputField;
 
-    // Use this for initialization
-    void Start()
-    {
-        UnityEngine.UI.Button _button = gameObject.GetComponent<UnityEngine.UI.Button>();
-        if (_button != null)
+        private bool mKeepPresed;
+        public bool KeepPressed
         {
-            _button.onClick.AddListener(onKeyClick);
+            set { mKeepPresed = value; }
+            get { return mKeepPresed; }
+        }
+
+        private Image image;
+        private Sprite normalImage;
+        private Timer timer;
+        private SpVoice voice;
+
+        private void Awake()
+        {
+            image = GetComponent<Image>();
+            normalImage = image.sprite;
+            timer = new Timer();
+
+            voice = new SpVoice();
+        }
+
+        void Update()
+        {
+            // 버튼 벗어났는지 확인.
+            if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
+            {
+                image.sprite = normalImage;
+                ResetTimer();
+            }
+        }
+
+        public void UpdateTimer(float deltaTime)
+        {
+            timer.Update(deltaTime);
+            if (timer.HasPastSince(1f))
+            {
+                //if (keyName.Equals("speak"))
+                //{
+                //    TextToSpeech();
+                //}
+                //else
+                //{
+                //    KeyboardManager.Instance.Append(keyName);
+                //}
+                Typing();
+            }
+
+            image.sprite = hoverImage;
+        }
+
+        void Typing()
+        {
+            //VirtualKeyboard _keybord = GameObject.FindObjectOfType< VirtualKeyboard>();
+            if (_Keybord != null)
+            {
+                _Keybord.KeyDown(this);
+            }
+        }
+
+        public void ResetTimer()
+        {
+            timer.Reset();
+        }
+
+        void TextToSpeech()
+        {
+            voice.Volume = 100; // Volume (no xml)
+            voice.Rate = 0;  //   Rate (no xml)
+            voice.Speak("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='ko-KO'>"
+                        //+"반갑습니다.이부분이 그냥출력"
+                        + inputField.text
+                        + "</speak>",
+                        SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
         }
     }
-
-    void onKeyClick()
-    {
-        //VirtualKeyboard _keybord = GameObject.FindObjectOfType< VirtualKeyboard>();
-        if (_Keybord != null)
-        {
-            _Keybord.KeyDown(this);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (KeepPressed)
-        {
-            //do something
-        }
-    }
-
-
-
-
 }
+//void Start()
+//{
+//    UnityEngine.UI.Button _button = gameObject.GetComponent<UnityEngine.UI.Button>();
+//    if (_button != null)
+//    {
+//        _button.onClick.AddListener(onKeyClick);
+//    }
+//}
+
+//void onKeyClick()
+//{
+//    //VirtualKeyboard _keybord = GameObject.FindObjectOfType< VirtualKeyboard>();
+//    if (_Keybord != null)
+//    {
+//        _Keybord.KeyDown(this);
+//    }
+//}
+
+//void Update()
+//{
+
+//    if (KeepPressed)
+//    {
+//        //do something
+//    }
+//}
+
+

@@ -74,6 +74,7 @@ namespace EyeHelpers
         void onKeyClick()
         {
             KeyboardManager.Instance.Append(keyName);
+            //TextToSpeech();
         }
 
         void TextToSpeech()

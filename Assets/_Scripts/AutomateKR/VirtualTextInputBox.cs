@@ -1,79 +1,82 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VirtualTextInputBox : MonoBehaviour
+namespace EyeHelpers
 {
-
-    AutomateKR mAutomateKR = new AutomateKR();
-    protected UnityEngine.UI.InputField mTextField = null;
-    protected string TextField
+    public class VirtualTextInputBox : MonoBehaviour
     {
-        set
+        AutomateKR mAutomateKR = new AutomateKR();
+        protected UnityEngine.UI.InputField mTextField = null;
+        protected string TextField
         {
-            if (mTextField != null)
+            set
             {
-                mTextField.text = value;
+                if (mTextField != null)
+                {
+                    mTextField.text = value;
+                }
+            }
+            get
+            {
+                if (mTextField != null)
+                {
+                    return mTextField.text;
+                }
+                return "";
             }
         }
-        get
+
+        void Start()
         {
-            if (mTextField != null)
+            mTextField = GetComponent<UnityEngine.UI.InputField>();
+        }
+
+        void Update()
+        {
+
+        }
+
+        public void Clear()
+        {
+            mAutomateKR.Clear();
+
+            TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
+        }
+
+
+        public void KeyDownHangul(char _key)
+        {
+            mAutomateKR.SetKeyCode(_key);
+
+            TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
+        }
+
+        public void KeyDown(char _key)
+        {
+            mAutomateKR.SetKeyString(_key);
+
+            TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
+        }
+
+        public void KeyDown(VirtualKey _key)
+        {
+            switch (_key.KeyType)
             {
-                return mTextField.text;
+                case VirtualKey.kType.kBackspace:
+                    {
+                        mAutomateKR.SetKeyCode(AutomateKR.KEY_CODE_BACKSPACE);
+
+                    }
+                    break;
+                case VirtualKey.kType.kSpace:
+                    {
+                        mAutomateKR.SetKeyCode(AutomateKR.KEY_CODE_SPACE);
+                    }
+                    break;
             }
-            return "";
+
+            TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
         }
-    }
-
-    void Start()
-    {
-        mTextField = GetComponent<UnityEngine.UI.InputField>();
-    }
-
-    void Update()
-    {
-
-    }
-
-    public void Clear()
-    {
-        mAutomateKR.Clear();
-
-        TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
-    }
-
-
-    public void KeyDownHangul(char _key)
-    {
-        mAutomateKR.SetKeyCode(_key);
-
-        TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
-    }
-
-    public void KeyDown(char _key)
-    {
-        mAutomateKR.SetKeyString(_key);
-
-        TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
-    }
-
-    public void KeyDown(VirtualKey _key)
-    {
-        switch (_key.KeyType)
-        {
-            case VirtualKey.kType.kBackspace:
-                {
-                    mAutomateKR.SetKeyCode(AutomateKR.KEY_CODE_BACKSPACE);
-
-                }
-                break;
-            case VirtualKey.kType.kSpace:
-                {
-                    mAutomateKR.SetKeyCode(AutomateKR.KEY_CODE_SPACE);
-                }
-                break;
-        }
-
-        TextField = mAutomateKR.completeText + mAutomateKR.ingWord;
     }
 }
+
