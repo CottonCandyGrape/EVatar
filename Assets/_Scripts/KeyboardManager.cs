@@ -17,7 +17,7 @@ namespace EyeHelpers
         PointerEventData data;
         List<RaycastResult> results;
 
-        KeyButton lastKey = null;
+        VirtualKey lastKey = null;
 
         private void Awake()
         {
@@ -25,10 +25,10 @@ namespace EyeHelpers
             data = new PointerEventData(eventSystem);
         }
 
-        public void Append(string input)
-        {
-            inputField.text += input;
-        }
+        //public void Append(string input)
+        //{
+        //    inputField.text += input;
+        //}
 
         private void Update()
         {
@@ -53,7 +53,7 @@ namespace EyeHelpers
 
                 foreach (RaycastResult result in results)
                 {
-                    KeyButton keyButton = result.gameObject.GetComponent<KeyButton>();
+                    VirtualKey keyButton = result.gameObject.GetComponent<VirtualKey>();
                     if (keyButton == null) continue;
                     
                     keyButton.UpdateTimer(Time.deltaTime);

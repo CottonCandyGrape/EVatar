@@ -51,7 +51,7 @@ namespace EyeHelpers
                 }
                 else
                 {
-                    KeyboardManager.Instance.Append(keyName);
+                    //KeyboardManager.Instance.Append(keyName);
                 }
             }
 

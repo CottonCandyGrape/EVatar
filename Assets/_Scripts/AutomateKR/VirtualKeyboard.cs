@@ -74,7 +74,7 @@ namespace EyeHelpers
                         break;
                     case VirtualKey.kType.kReturn:
                         {
-                            //do somehing
+                            Clear();
                         }
                         break;
                     case VirtualKey.kType.kCharacter:
@@ -105,6 +105,11 @@ namespace EyeHelpers
                                 mPressShift = false;
                             }
                             TextInputBox.KeyDown(keyCharacter);
+                        }
+                        break;
+                    case VirtualKey.kType.kSpeak:
+                        {
+                            _key.TextToSpeech();
                         }
                         break;
 

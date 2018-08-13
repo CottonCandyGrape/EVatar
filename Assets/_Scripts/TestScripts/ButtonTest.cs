@@ -59,7 +59,7 @@ namespace EyeHelpers
                 }
                 else
                 {
-                    KeyboardManager.Instance.Append(keyName);
+                    //KeyboardManager.Instance.Append(keyName);
                 }
             }
 
@@ -73,7 +73,7 @@ namespace EyeHelpers
 
         void onKeyClick()
         {
-            KeyboardManager.Instance.Append(keyName);
+            //KeyboardManager.Instance.Append(keyName);
             //TextToSpeech();
         }
 
