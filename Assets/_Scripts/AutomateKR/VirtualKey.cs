@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using SpeechLib;
 
 namespace EyeHelpers
 {
@@ -12,7 +11,6 @@ namespace EyeHelpers
         public char KeyCharacter;
         public kType KeyType = kType.kCharacter;
         public Sprite hoverImage;
-        public InputField inputField;        
 
         private bool mKeepPresed;
         public bool KeepPressed
@@ -24,7 +22,6 @@ namespace EyeHelpers
         private Image image;
         private Sprite normalImage;
         private Timer timer;
-        private SpVoice voice;
         private AudioSource typingSound;
 
         private void Awake()
@@ -32,7 +29,6 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
-            voice = new SpVoice();
             typingSound = GetComponent<AudioSource>();
         }
 
@@ -51,14 +47,6 @@ namespace EyeHelpers
             timer.Update(deltaTime);
             if (timer.HasPastSince(1f))
             {
-                //if (keyName.Equals("speak"))
-                //{
-                //    TextToSpeech();
-                //}
-                //else
-                //{
-                //    KeyboardManager.Instance.Append(keyName);
-                //}
                 Typing();
             }
 
@@ -67,7 +55,6 @@ namespace EyeHelpers
 
         void Typing()
         {
-            //VirtualKeyboard _keybord = GameObject.FindObjectOfType< VirtualKeyboard>();
             if (_Keybord != null)
             {
                 _Keybord.KeyDown(this);
@@ -78,17 +65,6 @@ namespace EyeHelpers
         public void ResetTimer()
         {
             timer.Reset();
-        }
-
-        public void TextToSpeech()
-        {
-            voice.Volume = 100; // Volume (no xml)
-            voice.Rate = 0;  //   Rate (no xml)
-            voice.Speak("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='ko-KO'>"
-                        //+"반갑습니다.이부분이 그냥출력"
-                        + inputField.text
-                        + "</speak>",
-                        SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
         }
     }
 }

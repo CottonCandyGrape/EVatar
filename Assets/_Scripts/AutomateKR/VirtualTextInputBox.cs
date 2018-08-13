@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using SpeechLib;
 
 namespace EyeHelpers
 {
@@ -25,15 +26,29 @@ namespace EyeHelpers
                 return "";
             }
         }
+        private SpVoice voice;
 
         void Start()
         {
             mTextField = GetComponent<UnityEngine.UI.InputField>();
+            voice = new SpVoice();
         }
 
         void Update()
         {
 
+        }
+
+        public void TextToSpeech()
+        {
+            voice.Volume = 100; // Volume (no xml)
+            voice.Rate = 0;  //   Rate (no xml)
+            voice.Speak("<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='ko-KO'>"
+                        //+"반갑습니다.이부분이 그냥출력"
+                        //+ inputField.text
+                        + TextField
+                        + "</speak>",
+                        SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
         }
 
         public void Clear()

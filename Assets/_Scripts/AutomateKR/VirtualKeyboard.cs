@@ -16,7 +16,6 @@ namespace EyeHelpers
         { '`', '~'},   {'-', '_'}, {'=', '+'}, {'[', '{'}, {']', '}'}, {'\\', '|'}, {',', '<'}, {'.', '>'}, {'/', '?'}
     };
 
-
         void Awake()
         {
             VirtualKey._Keybord = this;
@@ -109,12 +108,10 @@ namespace EyeHelpers
                         break;
                     case VirtualKey.kType.kSpeak:
                         {
-                            _key.TextToSpeech();
+                            TextInputBox.TextToSpeech();
                         }
                         break;
-
                 }
-
             }
         }
     }
