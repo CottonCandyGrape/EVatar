@@ -6,21 +6,26 @@ using UnityEngine.UI;
 public class ScreenMoveTest : MonoBehaviour
 {
     Button button;
+    GameObject gameObject;
 
     // Use this for initialization
     void Start()
     {
-        button = GetComponent<Button>();
+        //button = GetComponent<Button>();
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            Debug.Log(transform.GetChild(i).name);
-        }
+        //for (int i = 0; i < transform.childCount; i++)
+        //{
+        //    Debug.Log(transform.GetChild(i).name);
+        //}
 
-        if (button != null)
-        {
-            button.onClick.AddListener(OnClick);
-        }
+        //if (button != null)
+        //{
+        //    button.onClick.AddListener(OnClick);
+        //}
+
+        GameObject obj = GameObject.Find("Home");
+        Debug.Log(obj.name);
+        obj.SetActive(false);
     }
 
     void OnClick()
