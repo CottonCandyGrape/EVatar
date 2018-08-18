@@ -3,47 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScreenMoveTest : MonoBehaviour
+namespace Test
 {
-    Button button;
-    GameObject gameObject;
-
-    // Use this for initialization
-    void Start()
+    public class ScreenMoveTest : MonoBehaviour
     {
-        //button = GetComponent<Button>();
+        Button button;
+        GameObject videoStreaming, helpMe, keyboard;
 
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    Debug.Log(transform.GetChild(i).name);
-        //}
-
-        //if (button != null)
-        //{
-        //    button.onClick.AddListener(OnClick);
-        //}
-
-        GameObject obj = GameObject.Find("Home");
-        Debug.Log(obj.name);
-        obj.SetActive(false);
-    }
-
-    void OnClick()
-    {
-        string viewName = button.name;
-        switch (viewName)
+        // Use this for initialization
+        void Start()
         {
-            case "1":
-                transform.GetChild(0).gameObject.SetActive(false);
-                transform.GetChild(1).gameObject.SetActive(true);
-                break;
+            button = GetComponent<Button>();
+
+            if (button != null)
+            {
+                button.onClick.AddListener(OnClick);
+            }
+
+            videoStreaming = GameObject.Find("VideoStreaming");
+            helpMe = GameObject.Find("HelpMe");
+            keyboard = GameObject.Find("Keyboard");
+            //Debug.Log(obj.transform.parent.name);
+            //obj.SetActive(false);
         }
 
-    }
+        void OnClick()
+        {
+            string viewName = button.name;
+            switch (viewName)
+            {
+                case "VideoStreamingBtn":
+                    if (!ScreenMoveTest2.bVideoStreaming)
+                        ScreenMoveTest2.bVideoStreaming = true;
+                    else
+                        ScreenMoveTest2.bVideoStreaming = false;
+                    break;
+                case "HelpMeBtn":
+                    if (!ScreenMoveTest2.bHelpMe)
+                        ScreenMoveTest2.bHelpMe = true;
+                    else
+                        ScreenMoveTest2.bHelpMe = false;
+                    break;
+                case "KeyboardBtn":
+                    if (!ScreenMoveTest2.bKeyboard)
+                        ScreenMoveTest2.bKeyboard = true;
+                    else
+                        ScreenMoveTest2.bKeyboard = false;
+                    break;
+            }
 
-    // Update is called once per frame
-    void Update()
-    {
+        }
 
+        void Update()
+        {
+            videoStreaming.SetActive(ScreenMoveTest2.bVideoStreaming);
+            helpMe.SetActive(ScreenMoveTest2.bHelpMe);
+            keyboard.SetActive(ScreenMoveTest2.bKeyboard);
+        }
     }
 }
