@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 57
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: 0430e7085cbf26841995d335c700e6de, type: 3}
 --- !u!114 &55537752
 MonoBehaviour:
@@ -689,7 +689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &119978943
 MonoBehaviour:
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 51
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: ccfd08f783da64846ae3ea642d230ea6, type: 3}
 --- !u!114 &236557624
 MonoBehaviour:
@@ -1795,7 +1795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &336013621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1849,7 +1849,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &466890263
 GameObject:
@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 54
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: a3dc15e3db551f742b827102fa455660, type: 3}
 --- !u!114 &466890267
 MonoBehaviour:
@@ -3170,7 +3170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 52
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: 2668bf9db2aab454d9daa3b6fdf7e06f, type: 3}
 --- !u!114 &799540529
 MonoBehaviour:
@@ -3466,7 +3466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 50
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: a93bf6a42df541e499cae471bedc0b61, type: 3}
 --- !u!114 &872920698
 MonoBehaviour:
@@ -4486,7 +4486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 48
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: 7090b53db0a0bed48a6019db2737baeb, type: 3}
 --- !u!114 &1349949370
 MonoBehaviour:
@@ -5758,7 +5758,7 @@ RectTransform:
   - {fileID: 1745049339}
   - {fileID: 627944222}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6088,7 +6088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 49
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: a62a768069df4bd4894d4a34e2685a68, type: 3}
 --- !u!114 &1586179691
 MonoBehaviour:
@@ -6267,7 +6267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 53
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: 4f675203d02d2cb489cf2647bf4c79a3, type: 3}
 --- !u!114 &1667313901
 MonoBehaviour:
@@ -6446,7 +6446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 56
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: 093bc67039f17624bac14909d47440ac, type: 3}
 --- !u!114 &1684347928
 MonoBehaviour:
@@ -7781,7 +7781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyCharacter: 55
-  KeyType: 0
+  KeyType: 1
   hoverImage: {fileID: 21300000, guid: 0ab73a2367ec3084c838c4dbbc089765, type: 3}
 --- !u!114 &2138819949
 MonoBehaviour:
