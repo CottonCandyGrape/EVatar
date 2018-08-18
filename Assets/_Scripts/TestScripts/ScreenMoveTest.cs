@@ -8,7 +8,10 @@ namespace Test
     public class ScreenMoveTest : MonoBehaviour
     {
         Button button;
-        GameObject videoStreaming, helpMe, keyboard;
+        GameObject videoStreaming, helpMe;
+        GameObject keyboard;
+
+        GameObject image;
 
         // Use this for initialization
         void Start()
@@ -23,7 +26,9 @@ namespace Test
             videoStreaming = GameObject.Find("VideoStreaming");
             helpMe = GameObject.Find("HelpMe");
             keyboard = GameObject.Find("Keyboard");
-            //Debug.Log(obj.transform.parent.name);
+
+            //image = GameObject.Find("hello");
+            //Debug.Log(image.name);
             //obj.SetActive(false);
         }
 
@@ -40,13 +45,19 @@ namespace Test
                     break;
                 case "HelpMeBtn":
                     if (!ScreenMoveTest2.bHelpMe)
+                    {
                         ScreenMoveTest2.bHelpMe = true;
+                        ScreenMoveTest2.bKeyboard = false;
+                    }
                     else
                         ScreenMoveTest2.bHelpMe = false;
                     break;
                 case "KeyboardBtn":
                     if (!ScreenMoveTest2.bKeyboard)
+                    {
                         ScreenMoveTest2.bKeyboard = true;
+                        ScreenMoveTest2.bHelpMe = false;
+                    }
                     else
                         ScreenMoveTest2.bKeyboard = false;
                     break;
