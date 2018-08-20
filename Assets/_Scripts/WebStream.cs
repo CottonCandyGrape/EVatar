@@ -3,12 +3,14 @@ using System.Collections;
 using System;
 using System.Net;
 using System.IO;
+using UnityEngine.UI;
 
 public class WebStream : MonoBehaviour
 {
-    public MeshRenderer frame;    //Mesh for displaying video
+    //public MeshRenderer frame;    //Mesh for displaying video
+    public RawImage image;
 
-    private string sourceURL = "http://192.168.0.106:8080/video";
+    private string sourceURL = "http://223.194.132.63:8080/video";
     private Texture2D texture;
     private Stream stream;
 
@@ -56,7 +58,7 @@ public class WebStream : MonoBehaviour
             MemoryStream ms = new MemoryStream(JpegData, 0, bytesToRead, false, true);
 
             texture.LoadImage(ms.GetBuffer());
-            frame.material.mainTexture = texture;
+            image.texture = texture;
             stream.ReadByte(); // CR after bytes
             stream.ReadByte(); // LF after bytes
         }

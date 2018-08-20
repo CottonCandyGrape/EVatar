@@ -45,7 +45,7 @@ namespace EyeHelpers
         public void UpdateTimer(float deltaTime)
         {
             timer.Update(deltaTime);
-            if (timer.HasPastSince(1f))
+            if (timer.HasPastSince(0.5f))
             {
                 Typing();
             }
