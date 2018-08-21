@@ -59,7 +59,9 @@ namespace EyeHelpers
             {
                 _Keybord.KeyDown(this);
             }
-            typingSound.Play();
+
+            KeyboardManager.Instance.PlayKeySound();
+            //typingSound.Play();
         }
 
         public void ResetTimer()

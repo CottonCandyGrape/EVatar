@@ -17,12 +17,15 @@ namespace EyeHelpers
         PointerEventData data;
         List<RaycastResult> results;
 
+        AudioSource audioSource;
+
         VirtualKey lastKey = null;
 
         private void Awake()
         {
             eventSystem = EventSystem.current;
             data = new PointerEventData(eventSystem);
+            audioSource = GetComponent<AudioSource>();
         }
 
         //public void Append(string input)
@@ -74,6 +77,11 @@ namespace EyeHelpers
                 Vector3 worldPos = Camera.main.ScreenToWorldPoint(pointer.Screen);
                 sphere.transform.position = worldPos;
             }
+        }
+
+        public void PlayKeySound()
+        {
+            audioSource.PlayOneShot(audioSource.clip);
         }
     }
 }
