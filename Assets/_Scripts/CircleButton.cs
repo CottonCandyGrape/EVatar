@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Test
+namespace EyeHelpers
 {
     public class CircleButton : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Test
+namespace EyeHelpers
 {
     public class ModeChangeButton : MonoBehaviour
     {
