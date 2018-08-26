@@ -28,11 +28,6 @@ namespace EyeHelpers
             audioSource = GetComponent<AudioSource>();
         }
 
-        //public void Append(string input)
-        //{
-        //    inputField.text += input;
-        //}
-
         private void Update()
         {
             // 물체 이동.

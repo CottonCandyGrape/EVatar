@@ -70,31 +70,3 @@ namespace EyeHelpers
         }
     }
 }
-//void Start()
-//{
-//    UnityEngine.UI.Button _button = gameObject.GetComponent<UnityEngine.UI.Button>();
-//    if (_button != null)
-//    {
-//        _button.onClick.AddListener(onKeyClick);
-//    }
-//}
-
-//void onKeyClick()
-//{
-//    //VirtualKeyboard _keybord = GameObject.FindObjectOfType< VirtualKeyboard>();
-//    if (_Keybord != null)
-//    {
-//        _Keybord.KeyDown(this);
-//    }
-//}
-
-//void Update()
-//{
-
-//    if (KeepPressed)
-//    {
-//        //do something
-//    }
-//}
-
-
