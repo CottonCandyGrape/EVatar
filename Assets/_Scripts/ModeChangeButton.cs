@@ -8,11 +8,11 @@ namespace Test
     public class ModeChangeButton : MonoBehaviour
     {
         Button button;
-        GameObject home, videoStreaming, help, keyboard, circleBtn;
+        GameObject home, videoStreaming, moving, neck, help, keyboard, circleBtn;
 
-        public enum mType { video, keyboard, help, btn_x, moving, neck }
+        public enum MType { video, keyboard, help, btn_x, controller }
 
-        public mType modeType = mType.video;
+        public MType modeType = MType.video;
 
         // Use this for initialization
         void Start()
@@ -36,15 +36,19 @@ namespace Test
         {
             home.SetActive(ModeChangeManager.bHome);
             videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
+            moving.SetActive(ModeChangeManager.bMoving);
+            neck.SetActive(ModeChangeManager.bNeck);
             help.SetActive(ModeChangeManager.bHelp);
             keyboard.SetActive(ModeChangeManager.bKeyboard);
-            circleBtn.SetActive(ModeChangeManager.bCircleBtn);
+            circleBtn.SetActive(ModeChangeManager.bCircleBtn);            
         }
 
         private void FindModeObject()
         {
             home = GameObject.Find("Home");
             videoStreaming = GameObject.Find("VideoStreaming");
+            moving = GameObject.Find("Moving_Controller");
+            neck = GameObject.Find("Neck_Controller");
             help = GameObject.Find("Help");
             keyboard = GameObject.Find("Keyboard");
             circleBtn = GameObject.Find("Circle_Btn");
@@ -52,10 +56,11 @@ namespace Test
 
         void OnClick()
         {
-            mType mode = this.modeType;
+            MType mode = this.modeType;
             switch (mode)
             {
-                case mType.video:
+                case MType.video:
+                    //Home에서의 로봇연결하기버튼. 다른 모드에서 연결해재 눌렀을때 영상이 켜지지 않기 위함.
                     if (!ModeChangeManager.bVideoStreaming &&
                         !ModeChangeManager.bHelp &&
                         !ModeChangeManager.bKeyboard)
@@ -70,23 +75,23 @@ namespace Test
                         ModeChangeManager.bVideoStreaming = false;
                     }
                     else if (ModeChangeManager.bVideoStreaming)
-                    { // 영상만 켜져 있을때
+                    { // 영상만 켜져 있을때 Home으로 가기 위함.
                         ModeChangeManager.bVideoStreaming = false;
                         ModeChangeManager.bCircleBtn = false;
                         ModeChangeManager.bHome = true;
                     }
                     break;
 
-                case mType.keyboard:
+                case MType.keyboard:
                     if (!ModeChangeManager.bKeyboard)
                     {
                         ModeChangeManager.bKeyboard = true;
                         ModeChangeManager.bCircleBtn = true;
                         ModeChangeManager.bHome = false;
-                    }                    
+                    }
                     break;
 
-                case mType.help:
+                case MType.help:
                     if (!ModeChangeManager.bHelp)
                     {
                         ModeChangeManager.bHelp = true;
@@ -95,7 +100,7 @@ namespace Test
                     }
                     break;
 
-                case mType.btn_x:
+                case MType.btn_x:
                     if (ModeChangeManager.bKeyboard)
                         ModeChangeManager.bKeyboard = false;
                     else if (ModeChangeManager.bHelp)
@@ -106,6 +111,19 @@ namespace Test
                         ModeChangeManager.bHome = true;
                         ModeChangeManager.bCircleBtn = false;
                     }
+                    break;
+
+                case MType.controller:
+                    if (ModeChangeManager.bMoving)
+                    {
+                        ModeChangeManager.bMoving = false;
+                        ModeChangeManager.bNeck = true;                        
+                    }
+                    else
+                    {
+                        ModeChangeManager.bMoving = true;
+                        ModeChangeManager.bNeck = false;
+                    }                     
                     break;
             }
         }
