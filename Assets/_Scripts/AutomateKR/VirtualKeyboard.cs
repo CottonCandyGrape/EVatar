@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-
 namespace EyeHelpers
 {
     public class VirtualKeyboard : MonoBehaviour
@@ -16,7 +15,7 @@ namespace EyeHelpers
         { '`', '~'},   {'-', '_'}, {'=', '+'}, {'[', '{'}, {']', '}'}, {'\\', '|'}, {',', '<'}, {'.', '>'}, {'/', '?'}
     };
 
-        public GameObject kor, shiftedKor, num, en, shiftedEn;
+        GameObject kor, shiftedKor, num, en, shiftedEn;
         string currentKeyboard = "bKor";
 
         void Awake()
@@ -139,11 +138,6 @@ namespace EyeHelpers
                             TextInputBox.KeyDown(keyCharacter);
                         }
                         break;
-                    //case VirtualKey.kType.kSpeak:
-                    //    {
-                    //        TextInputBox.TextToSpeech();
-                    //    }
-                    //    break;
                     case VirtualKey.kType.kNum:
                         {
                             ChangeNumKeyboard();
@@ -206,7 +200,6 @@ namespace EyeHelpers
         }
 
         private void ChangeNumKeyboard()
-
         {
             if (!ModeChangeManager.bNum)
             {
