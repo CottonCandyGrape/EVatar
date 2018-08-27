@@ -15,11 +15,6 @@ public class TTSUnityWin : MonoBehaviour
         input = GameObject.Find("InputField1").GetComponent<InputField>();
     }
 
-    public void TtsButton()
-    {
-        Invoke("Ttsstar", 2);
-    }
-
     void Ttsstar()
     {
         voice.Volume = 100; // Volume (no xml)
@@ -31,26 +26,3 @@ public class TTSUnityWin : MonoBehaviour
                     SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
     }
 }
-
-//void OnGUI()
-//{
-//    SpObjectTokenCategory tokenCat = new SpObjectTokenCategory();
-//    tokenCat.SetId(SpeechLib.SpeechStringConstants.SpeechCategoryVoices, false);
-//    ISpeechObjectTokens tokens = tokenCat.EnumerateTokens(null, null);
-
-//    int n = 0;
-//    foreach (SpObjectToken item in tokens)
-//    {
-//        GUILayout.Label("Voice" + n + " ---> " + item.GetDescription(0));
-//        n++;
-//    }
-//    GUILayout.Label("There are " + n + " SAPI voices installed in your OS | Press SPACE for start TEST");
-//}
-
-//public void GetInput(string guess)
-//{
-//    Debug.Log("You Entered " + guess);
-//    input.text = "";
-//}
-
-//string BuiltAsset = "";

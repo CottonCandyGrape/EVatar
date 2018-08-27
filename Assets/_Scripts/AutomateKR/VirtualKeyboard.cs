@@ -16,20 +16,50 @@ namespace EyeHelpers
         { '`', '~'},   {'-', '_'}, {'=', '+'}, {'[', '{'}, {']', '}'}, {'\\', '|'}, {',', '<'}, {'.', '>'}, {'/', '?'}
     };
 
+        public GameObject kor, shiftedKor, num, en, shiftedEn;
+        string currentKeyboard = "bKor";
+
         void Awake()
         {
             VirtualKey._Keybord = this;
-        }
-        // Use this for initialization
-        void Start()
-        {
-
+            FindModeObject();
         }
 
-        // Update is called once per frame
         void Update()
         {
+            SetActiveMode();
+        }
 
+        private void FindModeObject()
+        {
+            kor = GameObject.Find("k_Normal");
+            shiftedKor = GameObject.Find("k_Shifted");
+            num = GameObject.Find("Number");
+            en = GameObject.Find("en_Normal");
+            shiftedEn = GameObject.Find("en_Shifted");
+        }
+
+        private void SetActiveMode()
+        {
+            kor.SetActive(ModeChangeManager.bKor);
+            shiftedKor.SetActive(ModeChangeManager.bShiftedKor);
+            num.SetActive(ModeChangeManager.bNum);
+            en.SetActive(ModeChangeManager.bEn);
+            shiftedEn.SetActive(ModeChangeManager.bShiftedEn);
+        }
+
+        private void OffCurrentKeyboard()
+        {
+            if (ModeChangeManager.bKor)
+                ModeChangeManager.bKor = false;
+            else if (ModeChangeManager.bShiftedKor)
+                ModeChangeManager.bShiftedKor = false;
+            else if (ModeChangeManager.bNum)
+                ModeChangeManager.bNum = false;
+            else if (ModeChangeManager.bEn)
+                ModeChangeManager.bEn = false;
+            else if (ModeChangeManager.bShiftedEn)
+                ModeChangeManager.bShiftedEn = false;
         }
 
         public void Clear()
@@ -57,12 +87,12 @@ namespace EyeHelpers
                     case VirtualKey.kType.kShift:
                         {
                             mPressShift = true;
+                            ChangeShiftKeyboard();
                         }
                         break;
                     case VirtualKey.kType.kHangul:
                         {
-                            if (mLanguage == kLanguage.kKorean) mLanguage = kLanguage.kEnglish;
-                            else mLanguage = kLanguage.kKorean;
+                            ChangeKorEnKeyboard();
                         }
                         break;
                     case VirtualKey.kType.kSpace:
@@ -73,6 +103,7 @@ namespace EyeHelpers
                         break;
                     case VirtualKey.kType.kReturn:
                         {
+                            TextInputBox.TextToSpeech();
                             Clear();
                         }
                         break;
@@ -83,6 +114,7 @@ namespace EyeHelpers
                             {
                                 keyCharacter = char.ToUpper(keyCharacter);
                                 mPressShift = false;
+                                ChangeShiftKeyboard();
                             }
 
                             if (mLanguage == kLanguage.kKorean)
@@ -102,18 +134,95 @@ namespace EyeHelpers
                             {
                                 keyCharacter = CHARACTER_TABLE[keyCharacter];
                                 mPressShift = false;
+                                ChangeShiftKeyboard();
                             }
                             TextInputBox.KeyDown(keyCharacter);
                         }
                         break;
-                    case VirtualKey.kType.kSpeak:
+                    //case VirtualKey.kType.kSpeak:
+                    //    {
+                    //        TextInputBox.TextToSpeech();
+                    //    }
+                    //    break;
+                    case VirtualKey.kType.kNum:
                         {
-                            TextInputBox.TextToSpeech();
+                            ChangeNumKeyboard();
                         }
                         break;
                 }
             }
         }
+
+        private void ChangeShiftKeyboard()
+        {
+            if (mPressShift && ModeChangeManager.bKor)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bShiftedKor = true;
+            }
+            else if (mPressShift && ModeChangeManager.bShiftedKor)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bKor = true;
+                mPressShift = false;
+            }
+            else if (mPressShift && ModeChangeManager.bShiftedEn)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bEn = true;
+                mPressShift = false;
+            }
+            else if (mPressShift && ModeChangeManager.bEn)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bShiftedEn = true;
+            }
+            else if (!mPressShift && ModeChangeManager.bShiftedKor)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bKor = true;
+            }
+            else if (!mPressShift && ModeChangeManager.bShiftedEn)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bEn = true;
+            }
+        }
+
+        private void ChangeKorEnKeyboard()
+        {
+            if (mLanguage == kLanguage.kKorean)
+            {
+                mLanguage = kLanguage.kEnglish;
+                OffCurrentKeyboard();
+                ModeChangeManager.bEn = true;
+            }
+            else if (mLanguage == kLanguage.kEnglish)
+            {
+                mLanguage = kLanguage.kKorean;
+                OffCurrentKeyboard();
+                ModeChangeManager.bKor = true;
+            }
+        }
+
+        private void ChangeNumKeyboard()
+
+        {
+            if (!ModeChangeManager.bNum)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bNum = true;
+            }
+            else if (mLanguage == kLanguage.kKorean)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bKor = true;
+            }
+            else if (mLanguage == kLanguage.kEnglish)
+            {
+                OffCurrentKeyboard();
+                ModeChangeManager.bEn = true;
+            }
+        }
     }
 }
-

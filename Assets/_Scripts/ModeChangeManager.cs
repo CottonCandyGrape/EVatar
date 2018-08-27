@@ -8,17 +8,26 @@ namespace EyeHelpers
     public class ModeChangeManager : MonoBehaviour
     {
         public static bool bHome, bVideoStreaming, bKeyboard, bHelp,
-            bCircleBtn, bMoving, bNeck;
+            bCircleBtn, bMoving, bNeck, bNum, bKor, bShiftedKor, bEn, bShiftedEn;
 
         // Use this for initialization
         void Awake()
         {
             bHome = true;
+
             bVideoStreaming = false;
             bMoving = true;
             bNeck = false;
+
             bKeyboard = false;
+            bKor = true;
+            bShiftedKor = false;
+            bNum = false;
+            bEn = false;
+            bShiftedEn = false;
+
             bHelp = false;
+
             bCircleBtn = false;            
         }
     }

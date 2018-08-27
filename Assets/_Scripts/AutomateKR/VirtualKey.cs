@@ -7,7 +7,7 @@ namespace EyeHelpers
     public class VirtualKey : MonoBehaviour
     {
         static public VirtualKeyboard _Keybord = null;
-        public enum kType { kCharacter, kOther, kReturn, kSpace, kBackspace, kShift, kTab, kCapsLock, kHangul, kSpeak }
+        public enum kType { kCharacter, kOther, kReturn, kSpace, kBackspace, kShift, kTab, kCapsLock, kHangul, kSpeak, kNum }
         public char KeyCharacter;
         public kType KeyType = kType.kCharacter;
         public Sprite hoverImage;
@@ -22,14 +22,12 @@ namespace EyeHelpers
         private Image image;
         private Sprite normalImage;
         private Timer timer;
-        private AudioSource typingSound;
 
         private void Awake()
         {
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
-            typingSound = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -61,7 +59,6 @@ namespace EyeHelpers
             }
 
             KeyboardManager.Instance.PlayKeySound();
-            //typingSound.Play();
         }
 
         public void ResetTimer()
