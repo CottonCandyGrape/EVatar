@@ -30,7 +30,7 @@ namespace EyeHelpers
 
         private void ChangeCircleButton()
         {
-            if (ModeChangeManager.bVideoStreaming
+            if (!ModeChangeManager.bHome
                 && !ModeChangeManager.bKeyboard
                 && !ModeChangeManager.bHelp)
             {//다른 모드에서 Video_Btn이 켜지지 않기 위함

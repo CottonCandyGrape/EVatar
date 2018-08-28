@@ -15,7 +15,7 @@ namespace EyeHelpers
         {
             bHome = true;
 
-            bVideoStreaming = false;
+            bVideoStreaming = true;
             bMoving = true;
             bNeck = false;
 

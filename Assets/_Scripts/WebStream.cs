@@ -12,33 +12,33 @@ namespace Test
         //public MeshRenderer frame;    //Mesh for displaying video
         public RawImage image;
 
-        private string sourceURL = "http://223.194.132.63:8080/video";
+        private string sourceURL = "http://223.194.158.187:8080/video";
         private Texture2D texture;
         private Stream stream;
 
-        private GameObject videoStreaming;
+        //private GameObject videoStreaming;
 
-        private void OnEnable()
-        {
-            GetVideo();
-        }
+        //private void OnEnable()
+        //{
+        //    GetVideo();
+        //}
 
-        private void IsDisable()
-        {
-            if (!videoStreaming.activeSelf)
-                StopCoroutine(GetFrame());
-        }
+        //private void IsDisable()
+        //{
+        //    if (!videoStreaming.activeSelf)
+        //        StopCoroutine(GetFrame());
+        //}
 
         void Start()
         {
-            videoStreaming = GameObject.Find("VideoStreaming");
-            //GetVideo();
+            //videoStreaming = GameObject.Find("VideoStreaming");
+            GetVideo();
         }
 
-        void Update()
-        {
-            IsDisable();
-        }
+        //void Update()
+        //{
+        //    IsDisable();
+        //}
 
         //private void OnDisable()
         //{
