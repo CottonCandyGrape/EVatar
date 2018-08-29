@@ -16,42 +16,10 @@ namespace Test
         private Texture2D texture;
         private Stream stream;
 
-        //private GameObject videoStreaming;
-
-        //private void OnEnable()
-        //{
-        //    GetVideo();
-        //}
-
-        //private void IsDisable()
-        //{
-        //    if (!videoStreaming.activeSelf)
-        //        StopCoroutine(GetFrame());
-        //}
-
         void Start()
         {
-            //videoStreaming = GameObject.Find("VideoStreaming");
             GetVideo();
         }
-
-        //void Update()
-        //{
-        //    IsDisable();
-        //}
-
-        //private void OnDisable()
-        //{
-        //    StopCoroutine(GetFrame());
-        //}
-
-        //void CheckState()
-        //{
-        //    if (ModeChangeManager.bVideoStreaming)
-        //        GetVideo();
-        //    else
-        //        StopCoroutine(GetFrame());
-        //}
 
         public void GetVideo()
         {

@@ -9,7 +9,7 @@ namespace EyeHelpers
     {
         Button button;
         Image centerImage;
-        GameObject center, home, videoStreaming, moving, neck, help, keyboard, circleBtn;
+        GameObject center, home, /*videoStreaming,*/ moving, neck, help, keyboard, circleBtn;
 
         Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
         Color videoColor = new Color(0.7215686f, 0.1176471f, 0.2352941f);
@@ -40,7 +40,7 @@ namespace EyeHelpers
         private void SetActiveMode()
         {
             home.SetActive(ModeChangeManager.bHome);
-            videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
+            //videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
             moving.SetActive(ModeChangeManager.bMoving);
             neck.SetActive(ModeChangeManager.bNeck);
             help.SetActive(ModeChangeManager.bHelp);
@@ -53,7 +53,7 @@ namespace EyeHelpers
             center = GameObject.Find("Center");
             centerImage = center.GetComponent<Image>();
             home = GameObject.Find("Home");
-            videoStreaming = GameObject.Find("VideoStreaming");
+            //videoStreaming = GameObject.Find("VideoStreaming");
             moving = GameObject.Find("Moving_Controller");
             neck = GameObject.Find("Neck_Controller");
             help = GameObject.Find("Help");
@@ -67,50 +67,42 @@ namespace EyeHelpers
             switch (mode)
             {
                 case MType.video:
-                    if (ModeChangeManager.bHome) //홈화면 상태에서
-                    {
+                    if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && ModeChangeManager.bHome)
+                    {//Keyboard Off, Help Off, Video Off (Home)
                         centerImage.color = videoColor;
                         ModeChangeManager.bHome = false;
                         ModeChangeManager.bCircleBtn = true;
                     }
-                    else if (!ModeChangeManager.bHome && //비디오만 켜진상태
-                        !ModeChangeManager.bKeyboard &&
-                        !ModeChangeManager.bHelp)
-                    {
+                    else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
+                    {//Keyboard Off, Help Off, Video On
                         centerImage.color = homeColor;
                         ModeChangeManager.bHome = true;
                         ModeChangeManager.bCircleBtn = false;
                     }
-                    else if (!ModeChangeManager.bHome && ModeChangeManager.bKeyboard)
-                    {
+                    else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && ModeChangeManager.bHome)
+                    {//Keyboard On, Help Off, Video Off
+                        centerImage.color = videoColor;
+                        ModeChangeManager.bKeyboard = false;
+                        ModeChangeManager.bHome = false;
+                    }
+                    else if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHelp && ModeChangeManager.bHome)
+                    {//Keyboard Off, Help On, Video Off
+                        centerImage.color = videoColor;
+                        ModeChangeManager.bHelp = false;
+                        ModeChangeManager.bHome = false;
+                    }
+                    else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
+                    {//Keyboard On, Help Off, Video On
+                        centerImage.color = keyboardColor;
+                        keyboard.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHome = true;
                     }
-                    else if (!ModeChangeManager.bHome && ModeChangeManager.bHelp)
-                    {
+                    else if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHelp && !ModeChangeManager.bHome)
+                    {//Keyboard Off, Help On, Video On
+                        centerImage.color = helpColor;
+                        help.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHome = true;
                     }
-
-
-                    ////Home에서의 로봇연결하기버튼. 다른 모드에서 연결해재 눌렀을때 영상이 켜지지 않기 위함.
-                    //if (!ModeChangeManager.bVideoStreaming &&
-                    //    !ModeChangeManager.bHelp &&
-                    //    !ModeChangeManager.bKeyboard)
-                    //{
-                    //    ModeChangeManager.bVideoStreaming = true;
-                    //    ModeChangeManager.bCircleBtn = true;
-                    //    ModeChangeManager.bHome = false;
-                    //}
-                    //else if ((ModeChangeManager.bKeyboard || ModeChangeManager.bHelp)
-                    //    && ModeChangeManager.bVideoStreaming)
-                    //{//영상위에 keyboard or help 올라가있을때
-                    //    ModeChangeManager.bVideoStreaming = false;
-                    //}
-                    //else if (ModeChangeManager.bVideoStreaming)
-                    //{ // 영상만 켜져 있을때 Home으로 가기 위함.
-                    //    ModeChangeManager.bVideoStreaming = false;
-                    //    ModeChangeManager.bCircleBtn = false;
-                    //    ModeChangeManager.bHome = true;
-                    //}
                     break;
 
                 case MType.keyboard:
@@ -188,5 +180,3 @@ namespace EyeHelpers
         }
     }
 }
-
-//home.GetComponent<Image>().enabled = false;
