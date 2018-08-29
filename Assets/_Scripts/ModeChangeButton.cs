@@ -8,12 +8,16 @@ namespace EyeHelpers
     public class ModeChangeButton : MonoBehaviour
     {
         Button button;
+        Image centerImage;
         GameObject center, home, videoStreaming, moving, neck, help, keyboard, circleBtn;
+
+        Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
+        Color videoColor = new Color(0.7215686f, 0.1176471f, 0.2352941f);
+        Color keyboardColor = new Color(0.4392157f, 0.1921569f, 0.4392157f);
+        Color helpColor = new Color(0.1372549f, 0.3333333f, 0.4941177f);
 
         public enum MType { video, keyboard, help, btn_x, controller }
         public MType modeType = MType.video;
-
-        //Color centerColor;
 
         // Use this for initialization
         void Start()
@@ -26,7 +30,6 @@ namespace EyeHelpers
             }
 
             FindModeObject();
-            //centerColor = GameObject.Find("Center").GetComponent<Image>().color;
         }
 
         void Update()
@@ -48,13 +51,14 @@ namespace EyeHelpers
         private void FindModeObject()
         {
             center = GameObject.Find("Center");
+            centerImage = center.GetComponent<Image>();
             home = GameObject.Find("Home");
             videoStreaming = GameObject.Find("VideoStreaming");
             moving = GameObject.Find("Moving_Controller");
             neck = GameObject.Find("Neck_Controller");
             help = GameObject.Find("Help");
             keyboard = GameObject.Find("Keyboard");
-            circleBtn = GameObject.Find("Circle_Btn");            
+            circleBtn = GameObject.Find("Circle_Btn");
         }
 
         void OnClick()
@@ -65,20 +69,23 @@ namespace EyeHelpers
                 case MType.video:
                     if (ModeChangeManager.bHome) //홈화면 상태에서
                     {
+                        centerImage.color = videoColor;
                         ModeChangeManager.bHome = false;
-                        center.GetComponent<Image>().color = new Color(0.7058824f, 0.1137255f, 0.2313726f);
                         ModeChangeManager.bCircleBtn = true;
                     }
                     else if (!ModeChangeManager.bHome && //비디오만 켜진상태
                         !ModeChangeManager.bKeyboard &&
                         !ModeChangeManager.bHelp)
                     {
+                        centerImage.color = homeColor;
                         ModeChangeManager.bHome = true;
                         ModeChangeManager.bCircleBtn = false;
                     }
-                    else if (!ModeChangeManager.bHome && //비디오가 켜지고 키보드나 Help 둘중 하나 켜져있을때
-                        (ModeChangeManager.bKeyboard ||
-                        ModeChangeManager.bHelp))
+                    else if (!ModeChangeManager.bHome && ModeChangeManager.bKeyboard)
+                    {
+                        ModeChangeManager.bHome = true;
+                    }
+                    else if (!ModeChangeManager.bHome && ModeChangeManager.bHelp)
                     {
                         ModeChangeManager.bHome = true;
                     }
@@ -107,49 +114,62 @@ namespace EyeHelpers
                     break;
 
                 case MType.keyboard:
-                    if (!ModeChangeManager.bKeyboard)
-                    {
+                    if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHome)
+                    {//Keyboard Off, Video Off
+                        centerImage.color = keyboardColor;
+                        keyboard.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bKeyboard = true;
                         ModeChangeManager.bCircleBtn = true;
-                        center.GetComponent<Image>().color = new Color(0.4392157f, 0.1921569f, 0.4392157f);
-                        //ModeChangeManager.bHome = false;
+                    }
+                    else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
+                    {//Keyboard Off, Video On
+                        centerImage.color = keyboardColor;
+                        keyboard.GetComponent<Image>().enabled = false;
+                        ModeChangeManager.bKeyboard = true;
+                        ModeChangeManager.bCircleBtn = true;
                     }
                     break;
 
                 case MType.help:
-                    if (!ModeChangeManager.bHelp)
-                    {
+                    if (!ModeChangeManager.bHelp && ModeChangeManager.bHome)
+                    {//Help Off, Video Off
+                        centerImage.color = helpColor;
+                        help.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHelp = true;
                         ModeChangeManager.bCircleBtn = true;
-                        //ModeChangeManager.bHome = false;
+                    }
+                    else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
+                    {//Help Off, Video On
+                        centerImage.color = helpColor;
+                        help.GetComponent<Image>().enabled = false;
+                        ModeChangeManager.bHelp = true;
+                        ModeChangeManager.bCircleBtn = true;
                     }
                     break;
 
                 case MType.btn_x:
-                    //if (!ModeChangeManager.bHome &&
-                    //   (ModeChangeManager.bKeyboard ||
-                    //   ModeChangeManager.bHelp))
-                    //    ModeChangeManager.bHome = false;
-                    //else if (!ModeChangeManager.bHome)
-                    //{
-                    //    ModeChangeManager.bHome = true;
-                    //    ModeChangeManager.bCircleBtn = false;
-                    //}
-
                     if (ModeChangeManager.bKeyboard && ModeChangeManager.bHome)
-                    {
+                    {//Keyboard On, Video Off
                         ModeChangeManager.bKeyboard = false;
                         ModeChangeManager.bCircleBtn = false;
+                        centerImage.color = homeColor;
                     }
                     else if (ModeChangeManager.bHelp && ModeChangeManager.bHome)
-                    {
+                    {//Help On, Video Off
                         ModeChangeManager.bHelp = false;
                         ModeChangeManager.bCircleBtn = false;
+                        centerImage.color = homeColor;
                     }
                     else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
+                    {//Keyboard On, Video On
                         ModeChangeManager.bKeyboard = false;
+                        centerImage.color = videoColor;
+                    }
                     else if (ModeChangeManager.bHelp && !ModeChangeManager.bHome)
+                    {//Help On, Video On
                         ModeChangeManager.bHelp = false;
+                        centerImage.color = videoColor;
+                    }
                     break;
 
                 case MType.controller:

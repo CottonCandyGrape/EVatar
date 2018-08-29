@@ -12,7 +12,7 @@ namespace EyeHelpers
         // Use this for initialization
         void Start()
         {
-            FindCircleBtn();
+            FindCircleButton();
         }
 
         // Update is called once per frame
@@ -21,7 +21,7 @@ namespace EyeHelpers
             ChangeCircleButton();
         }
 
-        private void FindCircleBtn()
+        private void FindCircleButton()
         {
             video = GameObject.Find("Video_Btn");
             keyboard = GameObject.Find("Keyboard_Btn");

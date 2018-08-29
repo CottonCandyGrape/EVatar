@@ -21,7 +21,7 @@ namespace EyeHelpers
         void Awake()
         {
             VirtualKey._Keybord = this;
-            FindModeObject();
+            FindKeyboardModeObject();
         }
 
         void Update()
@@ -29,7 +29,7 @@ namespace EyeHelpers
             SetActiveMode();
         }
 
-        private void FindModeObject()
+        private void FindKeyboardModeObject()
         {
             kor = GameObject.Find("k_Normal");
             shiftedKor = GameObject.Find("k_Shifted");
