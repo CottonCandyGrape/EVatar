@@ -18,7 +18,6 @@ namespace EyeHelpers
         // Update is called once per frame
         void Update()
         {
-
             ChangeCircleButton();
         }
 
@@ -31,48 +30,41 @@ namespace EyeHelpers
             helpOnVideo = GameObject.Find("Help_Btn_OnVideo");
         }
 
+        private void OffCurrentCircleButton()
+        {
+            if (video.activeSelf) video.SetActive(false);
+            if (keyboard.activeSelf) keyboard.SetActive(false);
+            if (keyboardOnVideo.activeSelf) keyboardOnVideo.SetActive(false);
+            if (help.activeSelf) help.SetActive(false);
+            if (helpOnVideo.activeSelf) helpOnVideo.SetActive(false);
+        }
+
         private void ChangeCircleButton()
         {
-            if (!ModeChangeManager.bHome
-                && !ModeChangeManager.bKeyboard
+            if (!ModeChangeManager.bHome && !ModeChangeManager.bKeyboard
                 && !ModeChangeManager.bHelp)
-            {//다른 모드에서 Video_Btn이 켜지지 않기 위함
+            {//Video Off //다른 모드에서 Video_Btn이 켜지지 않기 위함
+                OffCurrentCircleButton();
                 video.SetActive(true);
-                keyboard.SetActive(false);
-                keyboardOnVideo.SetActive(false);
-                help.SetActive(false);
-                helpOnVideo.SetActive(false);
             }
             else if (ModeChangeManager.bKeyboard && ModeChangeManager.bHome)
-            {//Keyboard On, Video Off
-                video.SetActive(false);
+            {//Keyboard On, Video Off                
+                OffCurrentCircleButton();
                 keyboard.SetActive(true);
-                keyboardOnVideo.SetActive(false);
-                help.SetActive(false);
-                helpOnVideo.SetActive(false);
             }
             else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
             {//Keyboard On, Video On
-                video.SetActive(false);
-                keyboard.SetActive(false);
+                OffCurrentCircleButton();
                 keyboardOnVideo.SetActive(true);
-                help.SetActive(false);
-                helpOnVideo.SetActive(false);
             }
             else if (ModeChangeManager.bHelp && ModeChangeManager.bHome)
             {//Help On, Video Off
-                video.SetActive(false);
-                keyboard.SetActive(false);
-                keyboardOnVideo.SetActive(false);
+                OffCurrentCircleButton();
                 help.SetActive(true);
-                helpOnVideo.SetActive(false);
             }
             else if (ModeChangeManager.bHelp && !ModeChangeManager.bHome)
             {//Help On, Video On
-                video.SetActive(false);
-                keyboard.SetActive(false);
-                keyboardOnVideo.SetActive(false);
-                help.SetActive(false);
+                OffCurrentCircleButton();
                 helpOnVideo.SetActive(true);
             }
         }
