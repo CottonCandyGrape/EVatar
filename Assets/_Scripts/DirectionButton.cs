@@ -95,7 +95,7 @@ namespace EyeHelpers
                     break;
             }
 
-            KeyboardManager.Instance.PlayKeySound();
+            EyeTypingManager.Instance.PlayKeySound();
         }
     }
 }

@@ -40,10 +40,8 @@ namespace EyeHelpers
             // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {
-                Debug.Log("벗어남");
                 image.sprite = normalImage;
                 ResetTimer();
-                Debug.Log("타이머 리셋");
             }
 
             SetActiveMode();
@@ -52,7 +50,6 @@ namespace EyeHelpers
         public void UpdateTimer(float deltaTime)
         {
             timer.Update(deltaTime);
-            Debug.Log("타이머시작");
             if (timer.HasPastSince(1f))
             {
                 Typing();
@@ -178,7 +175,7 @@ namespace EyeHelpers
                     break;
             }
 
-            KeyboardManager.Instance.PlayKeySound();
+            EyeTypingManager.Instance.PlayKeySound();
         }
 
         public void ResetTimer()
