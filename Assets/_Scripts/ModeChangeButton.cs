@@ -58,6 +58,11 @@ namespace EyeHelpers
             image.sprite = hoverImage;
         }
 
+        public void ResetTimer()
+        {
+            timer.Reset();
+        }
+
         void Typing()
         {
             MType mode = this.modeType;
@@ -163,12 +168,12 @@ namespace EyeHelpers
 
                 case MType.controller:
                     if (ModeChangeManager.bMoving)
-                    {
+                    {// Moving On
                         ModeChangeManager.bMoving = false;
                         ModeChangeManager.bNeck = true;
                     }
                     else
-                    {
+                    {// Neck On
                         ModeChangeManager.bMoving = true;
                         ModeChangeManager.bNeck = false;
                     }
@@ -176,11 +181,6 @@ namespace EyeHelpers
             }
 
             EyeTypingManager.Instance.PlayKeySound();
-        }
-
-        public void ResetTimer()
-        {
-            timer.Reset();
         }
 
         private void SetActiveMode()

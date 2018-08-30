@@ -29,7 +29,6 @@ namespace EyeHelpers
             timer = new Timer();
 
             FindHelpButton();
-            //SetStartState();
         }
 
         // Update is called once per frame
@@ -39,7 +38,6 @@ namespace EyeHelpers
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {
                 image.sprite = normalImage;
-                //Debug.Log("벗어남");
                 ResetTimer();
             }
         }
@@ -52,16 +50,6 @@ namespace EyeHelpers
             defecationClicked = GameObject.Find("Defecation_Clicked");
             meal = GameObject.Find("Meal");
             mealClicked = GameObject.Find("Meal_Clicked");
-        }
-
-        private void SetStartState()
-        {
-            breathing.SetActive(true);
-            breathingClicked.SetActive(false);
-            defecation.SetActive(true);
-            defecationClicked.SetActive(false);
-            meal.SetActive(true);
-            mealClicked.SetActive(false);
         }
 
         public void UpdateTimer(float deltaTime)

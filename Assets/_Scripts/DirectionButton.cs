@@ -19,9 +19,6 @@ namespace EyeHelpers
         private Sprite normalImage;
         private Timer timer;
 
-
-        //GameObject up, down, left, right;       
-
         // Use this for initialization
         void Start()
         {
@@ -45,7 +42,6 @@ namespace EyeHelpers
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {
                 image.sprite = normalImage;
-                //Debug.Log("벗어남");
                 ResetTimer();
             }
 
