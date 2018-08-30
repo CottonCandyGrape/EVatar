@@ -7,33 +7,28 @@ namespace EyeHelpers
 {
     public class DirectionButton : MonoBehaviour
     {
-        Button button;
-        string currentMode = string.Empty;
-
         public enum Direction { forward, backward, turn_left, turn_right }
         public Direction direction = Direction.forward;
+
+        //Button button;
+        string currentMode = string.Empty;
+
+        public Sprite hoverImage;
+
+        private Image image;
+        private Sprite normalImage;
+        private Timer timer;
+
+
         //GameObject up, down, left, right;       
 
         // Use this for initialization
         void Start()
         {
-            button = GetComponent<Button>();
-
-            if (button != null)
-            {
-                button.onClick.AddListener(OnClick);
-            }
-
-            //FindDirectionObject();
-        }
-
-        //private void FindDirectionObject()
-        //{
-        //    up = GameObject.Find("up");
-        //    down = GameObject.Find("down");
-        //    left = GameObject.Find("left");
-        //    right = GameObject.Find("right");
-        //}
+            image = GetComponent<Image>();
+            normalImage = image.sprite;
+            timer = new Timer();
+        }        
 
         private void CurrentMode()
         {
@@ -46,10 +41,34 @@ namespace EyeHelpers
         // Update is called once per frame
         void Update()
         {
+            // 버튼 벗어났는지 확인.
+            if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
+            {
+                image.sprite = normalImage;
+                //Debug.Log("벗어남");
+                ResetTimer();
+            }
+
             CurrentMode();
         }
 
-        void OnClick()
+        public void UpdateTimer(float deltaTime)
+        {
+            timer.Update(deltaTime);
+            if (timer.HasPastSince(1f))
+            {
+                Typing();
+            }
+
+            image.sprite = hoverImage;
+        }
+
+        public void ResetTimer()
+        {
+            timer.Reset();
+        }
+
+        void Typing()
         {
             switch (currentMode)
             {
@@ -65,8 +84,18 @@ namespace EyeHelpers
                     break;
 
                 case "Neck":
+                    if (direction == Direction.forward)
+                        Debug.Log("위로");
+                    else if (direction == Direction.backward)
+                        Debug.Log("아래로");
+                    else if (direction == Direction.turn_left)
+                        Debug.Log("왼쪽으로");
+                    else if (direction == Direction.turn_right)
+                        Debug.Log("오른쪽으로");
                     break;
             }
+
+            KeyboardManager.Instance.PlayKeySound();
         }
     }
 }

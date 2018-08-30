@@ -7,7 +7,16 @@ namespace EyeHelpers
 {
     public class ModeChangeButton : MonoBehaviour
     {
-        Button button;
+        public enum MType { video, keyboard, help, btn_x, controller }
+        public MType modeType = MType.video;
+
+        public Sprite hoverImage;
+
+        private Image image;
+        private Sprite normalImage;
+        private Timer timer;
+
+        //Button button;
         Image centerImage;
         GameObject center, home, /*videoStreaming,*/ moving, neck, help, keyboard, circleBtn;
 
@@ -16,52 +25,43 @@ namespace EyeHelpers
         Color keyboardColor = new Color(0.4392157f, 0.1921569f, 0.4392157f);
         Color helpColor = new Color(0.1372549f, 0.3333333f, 0.4941177f);
 
-        public enum MType { video, keyboard, help, btn_x, controller }
-        public MType modeType = MType.video;
-
         // Use this for initialization
         void Start()
         {
-            button = GetComponent<Button>();
-
-            if (button != null)
-            {
-                button.onClick.AddListener(OnClick);
-            }
+            image = GetComponent<Image>();
+            normalImage = image.sprite;
+            timer = new Timer();
 
             FindModeObject();
         }
 
         void Update()
         {
+            // 버튼 벗어났는지 확인.
+            if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
+            {
+                Debug.Log("벗어남");
+                image.sprite = normalImage;
+                ResetTimer();
+                Debug.Log("타이머 리셋");
+            }
+
             SetActiveMode();
         }
 
-        private void SetActiveMode()
+        public void UpdateTimer(float deltaTime)
         {
-            home.SetActive(ModeChangeManager.bHome);
-            //videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
-            moving.SetActive(ModeChangeManager.bMoving);
-            neck.SetActive(ModeChangeManager.bNeck);
-            help.SetActive(ModeChangeManager.bHelp);
-            keyboard.SetActive(ModeChangeManager.bKeyboard);
-            circleBtn.SetActive(ModeChangeManager.bCircleBtn);
+            timer.Update(deltaTime);
+            Debug.Log("타이머시작");
+            if (timer.HasPastSince(1f))
+            {
+                Typing();
+            }
+
+            image.sprite = hoverImage;
         }
 
-        private void FindModeObject()
-        {
-            center = GameObject.Find("Center");
-            centerImage = center.GetComponent<Image>();
-            home = GameObject.Find("Home");
-            //videoStreaming = GameObject.Find("VideoStreaming");
-            moving = GameObject.Find("Moving_Controller");
-            neck = GameObject.Find("Neck_Controller");
-            help = GameObject.Find("Help");
-            keyboard = GameObject.Find("Keyboard");
-            circleBtn = GameObject.Find("Circle_Btn");
-        }
-
-        void OnClick()
+        void Typing()
         {
             MType mode = this.modeType;
             switch (mode)
@@ -177,6 +177,37 @@ namespace EyeHelpers
                     }
                     break;
             }
+
+            KeyboardManager.Instance.PlayKeySound();
+        }
+
+        public void ResetTimer()
+        {
+            timer.Reset();
+        }
+
+        private void SetActiveMode()
+        {
+            home.SetActive(ModeChangeManager.bHome);
+            //videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
+            moving.SetActive(ModeChangeManager.bMoving);
+            neck.SetActive(ModeChangeManager.bNeck);
+            help.SetActive(ModeChangeManager.bHelp);
+            keyboard.SetActive(ModeChangeManager.bKeyboard);
+            circleBtn.SetActive(ModeChangeManager.bCircleBtn);
+        }
+
+        private void FindModeObject()
+        {
+            center = GameObject.Find("Center");
+            centerImage = center.GetComponent<Image>();
+            home = GameObject.Find("Home");
+            //videoStreaming = GameObject.Find("VideoStreaming");
+            moving = GameObject.Find("Moving_Controller");
+            neck = GameObject.Find("Neck_Controller");
+            help = GameObject.Find("Help");
+            keyboard = GameObject.Find("Keyboard");
+            circleBtn = GameObject.Find("Circle_Btn");
         }
     }
 }

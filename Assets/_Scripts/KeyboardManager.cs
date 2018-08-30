@@ -9,9 +9,7 @@ namespace EyeHelpers
 {
     public class KeyboardManager : Singleton<KeyboardManager>
     {
-        public InputField inputField;
         public GraphicRaycaster raycaster;
-        public GameObject sphere;
 
         EventSystem eventSystem;
         PointerEventData data;
@@ -30,14 +28,19 @@ namespace EyeHelpers
 
         private void Update()
         {
-            // 물체 이동.
-            UpdateObjectPosition();
-
-            // 토비 좌표 기준으로 Ray 발사해서 키버튼 동작 구동.
-            RayCastByTobii();
+            RayCastAllByTobii();
         }
 
-        void RayCastByTobii()
+        // 토비 좌표 기준으로 Ray 발사해서 동작 구동.
+        void RayCastAllByTobii()
+        {
+            RayCastKeyboardByTobii();
+            RayCastButtonByTobii();
+            RayCastDirectionByTobii();
+            RayCastHelpMenuByTobii();
+        }
+
+        void RayCastButtonByTobii()
         {
             data = new PointerEventData(eventSystem);
             data.position = TobiiAPI.GetGazePoint().Screen;
@@ -49,12 +52,78 @@ namespace EyeHelpers
                 results = new List<RaycastResult>();
                 raycaster.Raycast(data, results);
 
-                foreach (RaycastResult result in results)
+                if (results.Count > 0)
                 {
-                    VirtualKey keyButton = result.gameObject.GetComponent<VirtualKey>();
-                    if (keyButton == null) continue;
-                    
+                    ModeChangeButton modeChangeButton = results[0].gameObject.GetComponent<ModeChangeButton>();
+                    if (modeChangeButton == null) return;
+
+                    modeChangeButton.UpdateTimer(Time.deltaTime);
+                }
+            }
+        }
+
+        void RayCastKeyboardByTobii()
+        {
+            data = new PointerEventData(eventSystem);
+            data.position = TobiiAPI.GetGazePoint().Screen;
+
+            // 토비 좌표가 화면 좌표 안에 있을 때만 실행되도록.
+            if (!IsNaN(data.position))
+            {
+                // Ray 발사.
+                results = new List<RaycastResult>();
+                raycaster.Raycast(data, results);
+
+                if (results.Count > 0)
+                {
+                    VirtualKey keyButton = results[0].gameObject.GetComponent<VirtualKey>();
+                    if (keyButton == null) return;
+
                     keyButton.UpdateTimer(Time.deltaTime);
+                }
+            }
+        }
+
+        void RayCastDirectionByTobii()
+        {
+            data = new PointerEventData(eventSystem);
+            data.position = TobiiAPI.GetGazePoint().Screen;
+
+            // 토비 좌표가 화면 좌표 안에 있을 때만 실행되도록.
+            if (!IsNaN(data.position))
+            {
+                // Ray 발사.
+                results = new List<RaycastResult>();
+                raycaster.Raycast(data, results);
+
+                if (results.Count > 0)
+                {
+                    DirectionButton directionButton = results[0].gameObject.GetComponent<DirectionButton>();
+                    if (directionButton == null) return;
+
+                    directionButton.UpdateTimer(Time.deltaTime);
+                }
+            }
+        }
+
+        void RayCastHelpMenuByTobii()
+        {
+            data = new PointerEventData(eventSystem);
+            data.position = TobiiAPI.GetGazePoint().Screen;
+
+            // 토비 좌표가 화면 좌표 안에 있을 때만 실행되도록.
+            if (!IsNaN(data.position))
+            {
+                // Ray 발사.
+                results = new List<RaycastResult>();
+                raycaster.Raycast(data, results);
+
+                if (results.Count > 0)
+                {
+                    HelpButton helpButton = results[0].gameObject.GetComponent<HelpButton>();
+                    if (helpButton == null) return;
+
+                    helpButton.UpdateTimer(Time.deltaTime);
                 }
             }
         }
@@ -64,19 +133,19 @@ namespace EyeHelpers
             return float.IsNaN(input.x) || float.IsNaN(input.y);
         }
 
-        void UpdateObjectPosition()
-        {
-            GazePoint pointer = TobiiAPI.GetGazePoint();
-            if (pointer.IsValid)
-            {
-                Vector3 worldPos = Camera.main.ScreenToWorldPoint(pointer.Screen);
-                sphere.transform.position = worldPos;
-            }
-        }
-
         public void PlayKeySound()
         {
             audioSource.PlayOneShot(audioSource.clip);
         }
+
+        //void UpdateObjectPosition()
+        //{
+        //    GazePoint pointer = TobiiAPI.GetGazePoint();
+        //    if (pointer.IsValid)
+        //    {
+        //        Vector3 worldPos = Camera.main.ScreenToWorldPoint(pointer.Screen);
+        //        sphere.transform.position = worldPos;
+        //    }
+        //}
     }
 }
