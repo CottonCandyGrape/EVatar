@@ -11,7 +11,7 @@ namespace EyeHelpers
         public Direction direction = Direction.forward;
 
         //Button button;
-        string currentMode = string.Empty;
+        public string currentcontrolMode = string.Empty;
 
         public Sprite hoverImage;
 
@@ -30,13 +30,19 @@ namespace EyeHelpers
         private void CurrentMode()
         {
             if (ModeChangeManager.bMoving)
-                currentMode = "Moving";
+                currentcontrolMode = "Moving";
             else
-                currentMode = "Neck";
+                currentcontrolMode = "Neck";
         }
 
         // Update is called once per frame
         void Update()
+        {
+            IsOut();
+            CurrentMode();
+        }
+
+        private void IsOut()
         {
             // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
@@ -44,8 +50,6 @@ namespace EyeHelpers
                 image.sprite = normalImage;
                 ResetTimer();
             }
-
-            CurrentMode();
         }
 
         public void UpdateTimer(float deltaTime)
@@ -66,7 +70,7 @@ namespace EyeHelpers
 
         void Typing()
         {
-            switch (currentMode)
+            switch (currentcontrolMode)
             {
                 case "Moving":
                     if (direction == Direction.forward)

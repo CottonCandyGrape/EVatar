@@ -18,12 +18,15 @@ namespace EyeHelpers
 
         //Button button;
         Image centerImage;
-        GameObject center, home, /*videoStreaming,*/ moving, neck, help, keyboard, circleBtn;
+        GameObject center, home, /*videoStreaming,*/ moving, neck, blur, help, keyboard, circleBtn;
 
         Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
         Color videoColor = new Color(0.7215686f, 0.1176471f, 0.2352941f);
         Color keyboardColor = new Color(0.4392157f, 0.1921569f, 0.4392157f);
         Color helpColor = new Color(0.1372549f, 0.3333333f, 0.4941177f);
+
+        DirectionButton directionButton;
+        string currentcontrolMode;
 
         // Use this for initialization
         void Start()
@@ -31,11 +34,21 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
+            directionButton = new DirectionButton();
+            currentcontrolMode = directionButton.currentcontrolMode;
 
             FindModeObject();
         }
 
         void Update()
+        {
+            IsOut();
+            SetActiveMode();
+            OnOffBlur();
+            OnOffController();
+        }
+
+        private void IsOut()
         {
             // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
@@ -43,8 +56,6 @@ namespace EyeHelpers
                 image.sprite = normalImage;
                 ResetTimer();
             }
-
-            SetActiveMode();
         }
 
         public void UpdateTimer(float deltaTime)
@@ -189,6 +200,7 @@ namespace EyeHelpers
             //videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
             moving.SetActive(ModeChangeManager.bMoving);
             neck.SetActive(ModeChangeManager.bNeck);
+            blur.SetActive(ModeChangeManager.bBlur);
             help.SetActive(ModeChangeManager.bHelp);
             keyboard.SetActive(ModeChangeManager.bKeyboard);
             circleBtn.SetActive(ModeChangeManager.bCircleBtn);
@@ -202,9 +214,44 @@ namespace EyeHelpers
             //videoStreaming = GameObject.Find("VideoStreaming");
             moving = GameObject.Find("Moving_Controller");
             neck = GameObject.Find("Neck_Controller");
+            blur = GameObject.Find("BLUR");
             help = GameObject.Find("Help");
             keyboard = GameObject.Find("Keyboard");
             circleBtn = GameObject.Find("Circle_Btn");
+        }
+
+        private void OnOffBlur()
+        {//Video On, Keyboard On OR Video On, Help On
+            if ((!ModeChangeManager.bHome && ModeChangeManager.bKeyboard) ||
+                (!ModeChangeManager.bHome && ModeChangeManager.bHelp))
+                ModeChangeManager.bBlur = true;
+            else
+                ModeChangeManager.bBlur = false;
+        }
+
+        private void OnOffController()
+        {
+            if ((!ModeChangeManager.bHome && ModeChangeManager.bKeyboard) ||
+                (!ModeChangeManager.bHome && ModeChangeManager.bHelp))
+            {
+                if (currentcontrolMode.Equals("Moving"))
+                    ModeChangeManager.bMoving = false;
+                //moving.SetActive(false);
+                else if (currentcontrolMode.Equals("Neck"))
+                    ModeChangeManager.bNeck = false;
+                //neck.SetActive(false);
+
+            }
+            //else if ((!ModeChangeManager.bHome && !ModeChangeManager.bKeyboard) ||
+            //    (!ModeChangeManager.bHome && !ModeChangeManager.bHelp))
+            //{
+            //    if (currentcontrolMode.Equals("Moving"))
+            //        //ModeChangeManager.bMoving = true;
+            //        moving.SetActive(true);
+            //    else if (currentcontrolMode.Equals("Neck"))
+            //        //ModeChangeManager.bNeck = true;
+            //        neck.SetActive(true);
+            //}
         }
     }
 }

@@ -34,6 +34,11 @@ namespace EyeHelpers
         // Update is called once per frame
         void Update()
         {
+            IsOut();
+        }
+
+        private void IsOut()
+        {
             // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {

@@ -2494,6 +2494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 5d693f49becf47d439de1040316485f8, type: 3}
 --- !u!1 &198460942
 GameObject:
@@ -2746,7 +2747,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 211355038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -5135,6 +5136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 108ee5f51ffd07f47802a1c87c5fe122, type: 3}
 --- !u!1 &443196454
 GameObject:
@@ -5851,6 +5853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 5d693f49becf47d439de1040316485f8, type: 3}
 --- !u!1 &513361962
 GameObject:
@@ -7647,6 +7650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 18d7943d875e8d54dae80bc792f11322, type: 3}
 --- !u!1 &725086352
 GameObject:
@@ -8119,6 +8123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 3
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 4e139f3ef5ca55d47b6f96d8924c23d6, type: 3}
 --- !u!1 &753629345
 GameObject:
@@ -10400,6 +10405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 108ee5f51ffd07f47802a1c87c5fe122, type: 3}
 --- !u!1 &1095801067
 GameObject:
@@ -12304,14 +12310,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1323602178
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1323602177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -13086,6 +13092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 3
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 4e139f3ef5ca55d47b6f96d8924c23d6, type: 3}
 --- !u!1 &1383702037
 GameObject:
@@ -15478,6 +15485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
+  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 18d7943d875e8d54dae80bc792f11322, type: 3}
 --- !u!1 &1621549736
 GameObject:

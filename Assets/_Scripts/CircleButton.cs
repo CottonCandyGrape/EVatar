@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace EyeHelpers
 {
     public class CircleButton : MonoBehaviour
