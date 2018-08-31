@@ -68,24 +68,37 @@ namespace EyeHelpers
             timer.Reset();
         }
 
+        private void OffCurrentMenu()
+        {
+            if (!breathing.activeSelf) breathing.SetActive(true);
+            if (!defecation.activeSelf) defecation.SetActive(true);
+            if (!meal.activeSelf) meal.SetActive(true);
+        }
+
         void Typing()
         {
             HelpMenu clickedMenu = this.helpMenu;
             switch (clickedMenu)
             {
                 case HelpMenu.breathing:
-                    if (breathing.activeSelf) breathing.SetActive(false);
-                    else breathing.SetActive(true);
+                    //if (breathing.activeSelf) breathing.SetActive(false);
+                    //else breathing.SetActive(true);
+                    OffCurrentMenu();
+                    breathing.SetActive(false);
                     break;
 
                 case HelpMenu.defecation:
-                    if (defecation.activeSelf) defecation.SetActive(false);
-                    else defecation.SetActive(true);
+                    //if (defecation.activeSelf) defecation.SetActive(false);
+                    //else defecation.SetActive(true);
+                    OffCurrentMenu();
+                    defecation.SetActive(false);
                     break;
 
                 case HelpMenu.meal:
-                    if (meal.activeSelf) meal.SetActive(false);
-                    else meal.SetActive(true);
+                    //if (meal.activeSelf) meal.SetActive(false);
+                    //else meal.SetActive(true);
+                    OffCurrentMenu();
+                    meal.SetActive(false);
                     break;
 
                 case HelpMenu.menuDetailText:

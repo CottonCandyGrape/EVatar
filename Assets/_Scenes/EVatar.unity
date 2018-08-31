@@ -1480,7 +1480,6 @@ GameObject:
   - component: {fileID: 135807492}
   - component: {fileID: 135807494}
   - component: {fileID: 135807493}
-  - component: {fileID: 135807495}
   m_Layer: 5
   m_Name: Meal_Clicked
   m_TagString: Untagged
@@ -1544,20 +1543,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135807491}
---- !u!114 &135807495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 135807491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63463cde9829f7f4d9f455d88fafa20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helpMenu: 2
-  helpCommand: 
-  hoverImage: {fileID: 0}
 --- !u!1 &138988607
 GameObject:
   m_ObjectHideFlags: 0
@@ -12319,7 +12304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1323602178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16961,7 +16946,6 @@ GameObject:
   - component: {fileID: 1780000454}
   - component: {fileID: 1780000456}
   - component: {fileID: 1780000455}
-  - component: {fileID: 1780000457}
   m_Layer: 5
   m_Name: Defecation_Clicked
   m_TagString: Untagged
@@ -17025,20 +17009,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780000453}
---- !u!114 &1780000457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1780000453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63463cde9829f7f4d9f455d88fafa20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helpMenu: 1
-  helpCommand: 
-  hoverImage: {fileID: 0}
 --- !u!1 &1787262312
 GameObject:
   m_ObjectHideFlags: 0
@@ -18608,7 +18578,6 @@ GameObject:
   - component: {fileID: 2044208443}
   - component: {fileID: 2044208445}
   - component: {fileID: 2044208444}
-  - component: {fileID: 2044208446}
   m_Layer: 5
   m_Name: Breathing_Clicked
   m_TagString: Untagged
@@ -18672,20 +18641,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044208442}
---- !u!114 &2044208446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2044208442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63463cde9829f7f4d9f455d88fafa20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  helpMenu: 0
-  helpCommand: 
-  hoverImage: {fileID: 0}
 --- !u!1 &2055546082
 GameObject:
   m_ObjectHideFlags: 0
