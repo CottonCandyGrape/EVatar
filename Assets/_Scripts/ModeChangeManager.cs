@@ -29,7 +29,7 @@ namespace EyeHelpers
 
             bHelp = false;
 
-            bCircleBtn = false;            
+            bCircleBtn = false;
         }
     }
 }

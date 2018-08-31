@@ -48,6 +48,10 @@ namespace EyeHelpers
                         + "</speak>",
                         SpeechVoiceSpeakFlags.SVSFlagsAsync | SpeechVoiceSpeakFlags.SVSFIsXML);
         }
+        public void SetSendTextInInputField()
+        {
+            SendCommand.sendText = TextField;
+        }
 
         public void Clear()
         {
