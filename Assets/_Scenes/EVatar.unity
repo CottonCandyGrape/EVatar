@@ -3243,7 +3243,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 134433a8e626008428571c1eb5cfb92a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c18337bbd01243544b4180fbd5988be6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 2
   helpCommand: 
-  hoverImage: {fileID: 21300000, guid: 0ca48e0759c8d0d45b25b392b1196ad5, type: 3}
+  hoverImage: {fileID: 21300000, guid: 736dd92117a34f14d9921e435fb7406c, type: 3}
 --- !u!1 &261282857
 GameObject:
   m_ObjectHideFlags: 0
@@ -8340,7 +8340,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0d655d4ff2a7f9d49947cf9d60a06376, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 86bd231523b64fb46bde8ac889a81b63, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8367,7 +8367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 1
   helpCommand: 
-  hoverImage: {fileID: 21300000, guid: 768da69235dbdb0408484ef47833b968, type: 3}
+  hoverImage: {fileID: 21300000, guid: c1bebfad09760ec4c9be74565a1956cd, type: 3}
 --- !u!1 &799540525
 GameObject:
   m_ObjectHideFlags: 0
