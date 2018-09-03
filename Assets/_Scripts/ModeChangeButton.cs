@@ -85,6 +85,8 @@ namespace EyeHelpers
                         centerImage.color = videoColor;
                         ModeChangeManager.bHome = false;
                         ModeChangeManager.bCircleBtn = true;
+                        //ChatSend chatSend = new ChatSend();
+                        //chatSend.SendCommandText();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
                     {//Keyboard Off, Help Off, Video On

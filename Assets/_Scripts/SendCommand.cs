@@ -10,7 +10,7 @@ namespace EyeHelpers
 
         void Awake()
         {
-            sendText = "조깟네 이거 시발?";
+            sendText = string.Empty;
         }
     }
 }

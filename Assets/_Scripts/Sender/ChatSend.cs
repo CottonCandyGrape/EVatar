@@ -1,9 +1,6 @@
-﻿using UnityEngine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net;
-using UnityEngine.UI;
+using UnityEngine;
 
 namespace EyeHelpers
 {
@@ -55,7 +52,7 @@ namespace EyeHelpers
                 m_message[i] = new List<string>();
             }
 
-            //SetStartState();
+            SetStartState();
         }
 
         // Update is called once per frame
@@ -71,31 +68,31 @@ namespace EyeHelpers
                     break;
 
                 case ChatState.CHATTING:
-                    UpdateChatting();
+                    //UpdateChatting();
                     break;
             }
         }
 
-        void UpdateChatting()
-        {
-            byte[] buffer = new byte[10000];
+        //void UpdateChatting()
+        //{
+        //    byte[] buffer = new byte[10000];
 
-            int recvSize = m_transport.Receive(ref buffer, buffer.Length);
-            if (recvSize > 0)
-            {
-                //수신하는 소스코드
-                string message = System.Text.Encoding.UTF8.GetString(buffer);
-                Debug.Log("Recv data:" + message);
-                m_chatMessage += message + "   ";// + "\n";
+        //    int recvSize = m_transport.Receive(ref buffer, buffer.Length);
+        //    if (recvSize > 0)
+        //    {
+        //        //수신하는 소스코드
+        //        string message = System.Text.Encoding.UTF8.GetString(buffer);
+        //        Debug.Log("Recv data:" + message);
+        //        m_chatMessage += message + "   ";// + "\n";
 
-                int id = (m_isServer == true) ? 1 : 0;
-            }
-        }
+        //        int id = (m_isServer == true) ? 1 : 0;
+        //    }
+        //}
 
-        void OnGUI()
-        {
-            SetStartState();
-        }
+        //void OnGUI()
+        //{
+        //    SetStartState();
+        //}
 
         private void SetStartState()
         {
@@ -106,7 +103,7 @@ namespace EyeHelpers
                     break;
 
                 case ChatState.CHATTING:
-                    SendCommandText();
+                    //SendCommandText();
                     break;
             }
         }
@@ -114,7 +111,7 @@ namespace EyeHelpers
         void SelectHostTypeGUI()
         {
             //서버IP지정
-            m_hostAddress = "223.194.157.146";
+            m_hostAddress = "172.30.1.2";
 
             //채팅방무조건 들어가기 
             if (true)
@@ -130,34 +127,34 @@ namespace EyeHelpers
 
         public void SendCommandText()
         {
-            Rect commentRect = new Rect(220, 450, 300, 30);
-            m_sendComment = GUI.TextField(commentRect, m_sendComment, 15);
+            //Rect commentRect = new Rect(220, 450, 300, 30);
+            //m_sendComment = GUI.TextField(commentRect, m_sendComment, 15);
 
-            //송신하는 소스코드
-            bool isSent = GUI.Button(new Rect(530, 450, 100, 30), "말하기");
-            if (Event.current.isKey &&
-                Event.current.keyCode == KeyCode.Return)
-            {
-                if (m_sendComment == m_prevComment)
-                {
-                    isSent = true;
-                    m_prevComment = "";
-                }
-                else
-                {
-                    m_prevComment = m_sendComment;
-                }
-            }
+            ////송신하는 소스코드
+            //bool isSent = GUI.Button(new Rect(530, 450, 100, 30), "말하기");
+            //if (Event.current.isKey &&
+            //    Event.current.keyCode == KeyCode.Return)
+            //{
+            //    if (m_sendComment == m_prevComment)
+            //    {
+            //        isSent = true;
+            //        m_prevComment = "";
+            //    }
+            //    else
+            //    {
+            //        m_prevComment = m_sendComment;
+            //    }
+            //}
 
-            if (isSent == true)
-            {
-                //string message = m_sendComment;
-                string message = "head:up0";
-                //string message = SendCommand.sendText;
-                byte[] buffer = System.Text.Encoding.UTF8.GetBytes(message);
+            //if (isSent == true)
+            //{
+            //string message = m_sendComment;
+            string message = "안녕하세요";
+            //string message = SendCommand.sendText;
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(message);
                 m_transport.Send(buffer, buffer.Length);
                 m_sendComment = "";
-            }              
+            //}              
 
         }
 
