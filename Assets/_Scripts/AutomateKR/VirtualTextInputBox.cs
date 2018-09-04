@@ -51,7 +51,7 @@ namespace EyeHelpers
 
         public void SetSendTextInInputField()
         {
-            EyeTypingManager.Instance.sendText = TextField;
+            EyeTypingManager.Instance.sendText = "<tts=" + TextField + ">";
         }
 
         public void Clear()

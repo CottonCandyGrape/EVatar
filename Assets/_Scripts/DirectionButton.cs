@@ -74,24 +74,32 @@ namespace EyeHelpers
             {
                 case "Moving":
                     if (direction == Direction.forward)
-                        Debug.Log("직진");
+                        EyeTypingManager.Instance.sendText = "<cmd=mobility:go0>";
+                        //Debug.Log("직진");
                     else if (direction == Direction.backward)
-                        Debug.Log("후진");
+                        EyeTypingManager.Instance.sendText = "<cmd=mobility:back0>";
+                    //Debug.Log("후진");
                     else if (direction == Direction.turn_left)
-                        Debug.Log("좌회전");
+                        EyeTypingManager.Instance.sendText = "<cmd=mobility:left0>";
+                    //Debug.Log("좌회전");
                     else if (direction == Direction.turn_right)
-                        Debug.Log("우회전");
+                        EyeTypingManager.Instance.sendText = "<cmd=mobility:right0>";
+                    //Debug.Log("우회전");
                     break;
 
                 case "Neck":
                     if (direction == Direction.forward)
-                        Debug.Log("위로");
+                        EyeTypingManager.Instance.sendText = "<cmd=head:up0>";
+                    //Debug.Log("위로");
                     else if (direction == Direction.backward)
-                        Debug.Log("아래로");
+                        EyeTypingManager.Instance.sendText = "<cmd=head:down0>";
+                    //Debug.Log("아래로");
                     else if (direction == Direction.turn_left)
-                        Debug.Log("왼쪽으로");
+                        EyeTypingManager.Instance.sendText = "<cmd=head:left0>";
+                    //Debug.Log("왼쪽으로");
                     else if (direction == Direction.turn_right)
-                        Debug.Log("오른쪽으로");
+                        EyeTypingManager.Instance.sendText = "<cmd=head:right0>";
+                    //Debug.Log("오른쪽으로");
                     break;
             }
 
