@@ -18,14 +18,14 @@ namespace EyeHelpers
 
         //Button button;
         Image centerImage;
-        GameObject center, home, /*videoStreaming,*/ moving, neck, blur, help, keyboard, circleBtn;
+        GameObject center, home, /*videoStreaming,*/ controller, moving, neck, blur, help, keyboard, circleBtn;
 
         Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
         Color videoColor = new Color(0.7215686f, 0.1176471f, 0.2352941f);
         Color keyboardColor = new Color(0.4392157f, 0.1921569f, 0.4392157f);
         Color helpColor = new Color(0.1372549f, 0.3333333f, 0.4941177f);
 
-        DirectionButton directionButton;
+        //DirectionButton directionButton;
         string currentcontrolMode;
 
         // Use this for initialization
@@ -34,8 +34,8 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
-            directionButton = new DirectionButton();
-            currentcontrolMode = directionButton.currentcontrolMode;
+            //directionButton = new DirectionButton();
+            //currentcontrolMode = directionButton.currentcontrolMode;
 
             FindModeObject();
         }
@@ -214,6 +214,7 @@ namespace EyeHelpers
             centerImage = center.GetComponent<Image>();
             home = GameObject.Find("Home");
             //videoStreaming = GameObject.Find("VideoStreaming");
+            controller = GameObject.Find("Controller");
             moving = GameObject.Find("Moving_Controller");
             neck = GameObject.Find("Neck_Controller");
             blur = GameObject.Find("BLUR");
@@ -235,25 +236,9 @@ namespace EyeHelpers
         {
             if ((!ModeChangeManager.bHome && ModeChangeManager.bKeyboard) ||
                 (!ModeChangeManager.bHome && ModeChangeManager.bHelp))
-            {
-                if (currentcontrolMode.Equals("Moving"))
-                    ModeChangeManager.bMoving = false;
-                //moving.SetActive(false);
-                else if (currentcontrolMode.Equals("Neck"))
-                    ModeChangeManager.bNeck = false;
-                //neck.SetActive(false);
-
-            }
-            //else if ((!ModeChangeManager.bHome && !ModeChangeManager.bKeyboard) ||
-            //    (!ModeChangeManager.bHome && !ModeChangeManager.bHelp))
-            //{
-            //    if (currentcontrolMode.Equals("Moving"))
-            //        //ModeChangeManager.bMoving = true;
-            //        moving.SetActive(true);
-            //    else if (currentcontrolMode.Equals("Neck"))
-            //        //ModeChangeManager.bNeck = true;
-            //        neck.SetActive(true);
-            //}
+                controller.SetActive(false);
+            else
+                controller.SetActive(true);
         }
     }
 }
