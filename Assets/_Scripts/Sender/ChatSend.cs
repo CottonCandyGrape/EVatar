@@ -68,26 +68,26 @@ namespace EyeHelpers
                     break;
 
                 case ChatState.CHATTING:
-                    //UpdateChatting();
+                    UpdateChatting();
                     break;
             }
         }
 
-        //void UpdateChatting()
-        //{
-        //    byte[] buffer = new byte[10000];
+        void UpdateChatting()
+        {
+            byte[] buffer = new byte[10000];
 
-        //    int recvSize = m_transport.Receive(ref buffer, buffer.Length);
-        //    if (recvSize > 0)
-        //    {
-        //        //수신하는 소스코드
-        //        string message = System.Text.Encoding.UTF8.GetString(buffer);
-        //        Debug.Log("Recv data:" + message);
-        //        m_chatMessage += message + "   ";// + "\n";
+            int recvSize = m_transport.Receive(ref buffer, buffer.Length);
+            if (recvSize > 0)
+            {
+                //수신하는 소스코드
+                string message = System.Text.Encoding.UTF8.GetString(buffer);
+                Debug.Log("Recv data:" + message);
+                m_chatMessage += message + "   ";// + "\n";
 
-        //        int id = (m_isServer == true) ? 1 : 0;
-        //    }
-        //}
+                int id = (m_isServer == true) ? 1 : 0;
+            }
+        }
 
         //void OnGUI()
         //{
@@ -103,7 +103,7 @@ namespace EyeHelpers
                     break;
 
                 case ChatState.CHATTING:
-                    //SendCommandText();
+                    SendCommandText();
                     break;
             }
         }
@@ -111,7 +111,7 @@ namespace EyeHelpers
         void SelectHostTypeGUI()
         {
             //서버IP지정
-            m_hostAddress = "172.30.1.2";
+            m_hostAddress = "172.30.1.60";
 
             //채팅방무조건 들어가기 
             if (true)
@@ -147,14 +147,15 @@ namespace EyeHelpers
             //}
 
             //if (isSent == true)
-            //{
-            //string message = m_sendComment;
-            string message = "안녕하세요";
-            //string message = SendCommand.sendText;
-            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(message);
+            {
+                //string message = m_sendComment;
+                //string message = "안녕하세요";
+                //string message = SendCommand.sendText;
+                byte[] buffer = 
+                    System.Text.Encoding.UTF8.GetBytes(EyeTypingManager.Instance.sendText);
                 m_transport.Send(buffer, buffer.Length);
-                m_sendComment = "";
-            //}              
+                //m_sendComment = "";
+            }
 
         }
 

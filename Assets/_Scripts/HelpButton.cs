@@ -108,6 +108,7 @@ namespace EyeHelpers
 
                 case HelpMenu.menuDetailText:
                     Debug.Log(helpCommand);
+                    EyeTypingManager.Instance.TextToSpeech(helpCommand);
                     break;
             }
 

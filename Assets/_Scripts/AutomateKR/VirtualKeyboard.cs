@@ -19,7 +19,6 @@ namespace EyeHelpers
         //string currentKeyboard = "bKor";
         ChatSend chatSend;
 
-
         void Awake()
         {
             VirtualKey._Keybord = this;
@@ -114,7 +113,7 @@ namespace EyeHelpers
                             {
                                 Debug.Log("일단 들어옴");
                                 TextInputBox.SetSendTextInInputField();
-                                Debug.Log("보낼 텍스트 초기화:" + SendCommand.sendText);
+                                Debug.Log("보낼 텍스트 초기화:" + EyeTypingManager.Instance.sendText);
                                 chatSend.SendCommandText();
                                 Debug.Log("보냈다");
                                 Clear();
