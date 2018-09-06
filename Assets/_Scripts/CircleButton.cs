@@ -17,7 +17,7 @@ namespace EyeHelpers
         // Update is called once per frame
         void Update()
         {
-            ChangeCircleButton();
+
         }
 
         private void FindCircleButton()

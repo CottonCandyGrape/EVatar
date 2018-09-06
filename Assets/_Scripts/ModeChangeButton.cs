@@ -17,17 +17,14 @@ namespace EyeHelpers
         private Image centerImage;
         private Timer timer;
 
-        //Button button;
-        GameObject center, home, /*videoStreaming,*/ controller, moving, neck, blur, help, keyboard, circleBtn;
+        GameObject center, home, controller, moving, neck, blur, help, keyboard, circleBtn;
 
         Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
         Color videoColor = new Color(0.7215686f, 0.1176471f, 0.2352941f);
         Color keyboardColor = new Color(0.4392157f, 0.1921569f, 0.4392157f);
         Color helpColor = new Color(0.1372549f, 0.3333333f, 0.4941177f);
 
-        //DirectionButton directionButton;
-        //string currentcontrolMode;
-        CircleButton circleButton;
+        [SerializeField] private CircleButton circleButton;
 
         // Use this for initialization
         void Start()
@@ -35,9 +32,6 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
-            circleButton = new CircleButton();
-            //directionButton = new DirectionButton();
-            //currentcontrolMode = directionButton.currentcontrolMode;
 
             FindModeObject();
         }
@@ -87,7 +81,7 @@ namespace EyeHelpers
                         centerImage.color = videoColor;
                         ModeChangeManager.bHome = false;
                         ModeChangeManager.bCircleBtn = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
                     {//Keyboard Off, Help Off, Video On //Video에서 연결해제
@@ -100,28 +94,28 @@ namespace EyeHelpers
                         centerImage.color = videoColor;
                         ModeChangeManager.bKeyboard = false;
                         ModeChangeManager.bHome = false;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHelp && ModeChangeManager.bHome)
                     {//Keyboard Off, Help On, Video Off //Help에서 연결하기
                         centerImage.color = videoColor;
                         ModeChangeManager.bHelp = false;
                         ModeChangeManager.bHome = false;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
                     {//Keyboard On, Help Off, Video On //Keyboard에서 연결해제
                         centerImage.color = keyboardColor;
                         keyboard.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHome = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHelp && !ModeChangeManager.bHome)
                     {//Keyboard Off, Help On, Video On //Help에서 연결해제
                         centerImage.color = helpColor;
                         help.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHome = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     break;
 
@@ -132,7 +126,7 @@ namespace EyeHelpers
                         keyboard.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bKeyboard = true;
                         ModeChangeManager.bCircleBtn = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
                     {//Keyboard Off, Video On //Video에서 Keyboard 켜기
@@ -140,7 +134,7 @@ namespace EyeHelpers
                         keyboard.GetComponent<Image>().enabled = false;
                         ModeChangeManager.bKeyboard = true;
                         ModeChangeManager.bCircleBtn = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     break;
 
@@ -151,7 +145,7 @@ namespace EyeHelpers
                         help.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHelp = true;
                         ModeChangeManager.bCircleBtn = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
                     {//Help Off, Video On //Video에서 Help 켜기
@@ -159,7 +153,7 @@ namespace EyeHelpers
                         help.GetComponent<Image>().enabled = false;
                         ModeChangeManager.bHelp = true;
                         ModeChangeManager.bCircleBtn = true;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     break;
 
@@ -180,13 +174,13 @@ namespace EyeHelpers
                     {//Keyboard On, Video On 
                         ModeChangeManager.bKeyboard = false;
                         centerImage.color = videoColor;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     else if (ModeChangeManager.bHelp && !ModeChangeManager.bHome)
                     {//Help On, Video On
                         ModeChangeManager.bHelp = false;
                         centerImage.color = videoColor;
-                        //circleButton.ChangeCircleButton();
+                        circleButton.ChangeCircleButton();
                     }
                     break;
 
@@ -210,7 +204,6 @@ namespace EyeHelpers
         private void SetActiveMode()
         {
             home.SetActive(ModeChangeManager.bHome);
-            //videoStreaming.SetActive(ModeChangeManager.bVideoStreaming);
             moving.SetActive(ModeChangeManager.bMoving);
             neck.SetActive(ModeChangeManager.bNeck);
             blur.SetActive(ModeChangeManager.bBlur);
@@ -224,7 +217,6 @@ namespace EyeHelpers
             center = GameObject.Find("Center");
             centerImage = center.GetComponent<Image>();
             home = GameObject.Find("Home");
-            //videoStreaming = GameObject.Find("VideoStreaming");
             controller = GameObject.Find("Controller");
             moving = GameObject.Find("Moving_Controller");
             neck = GameObject.Find("Neck_Controller");

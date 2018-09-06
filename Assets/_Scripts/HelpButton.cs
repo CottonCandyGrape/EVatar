@@ -39,16 +39,6 @@ namespace EyeHelpers
             IsOut();
         }
 
-        private void IsOut()
-        {
-            // 버튼 벗어났는지 확인.
-            if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
-            {
-                image.sprite = normalImage;
-                ResetTimer();
-            }
-        }
-
         private void FindHelpButton()
         {
             breathing = GameObject.Find("Breathing");
@@ -57,6 +47,16 @@ namespace EyeHelpers
             defecationClicked = GameObject.Find("Defecation_Clicked");
             meal = GameObject.Find("Meal");
             mealClicked = GameObject.Find("Meal_Clicked");
+        }
+
+        private void IsOut()
+        {
+            // 버튼 벗어났는지 확인.
+            if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
+            {
+                image.sprite = normalImage;
+                ResetTimer();
+            }
         }
 
         public void UpdateTimer(float deltaTime)
