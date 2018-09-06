@@ -10,14 +10,25 @@ namespace EyeHelpers
         public enum Direction { forward, backward, turn_left, turn_right }
         public Direction direction = Direction.forward;
 
-        //Button button;
-        public string currentcontrolMode = string.Empty;
-
         public Sprite hoverImage;
 
         private Image image;
         private Sprite normalImage;
         private Timer timer;
+
+        private string currentcontrolMode = string.Empty;
+        private string[] commandList = {
+            "<cmd=mobility:go0>",
+            "<cmd=mobility:back0>",
+            "<cmd=mobility:left0>",
+            "<cmd=mobility:right0>",
+            "<cmd=head:up0>",
+            "<cmd=head:down0>",
+            "<cmd=head:left0>",
+            "<cmd=head:right0>"
+        };
+
+        [SerializeField] private ChatSend chatSend;
 
         // Use this for initialization
         void Start()
@@ -25,14 +36,6 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
-        }        
-
-        private void CurrentMode()
-        {
-            if (ModeChangeManager.bMoving)
-                currentcontrolMode = "Moving";
-            else
-                currentcontrolMode = "Neck";
         }
 
         // Update is called once per frame
@@ -40,6 +43,14 @@ namespace EyeHelpers
         {
             IsOut();
             CurrentMode();
+        }
+
+        private void CurrentMode()
+        {
+            if (ModeChangeManager.bMoving)
+                currentcontrolMode = "Moving";
+            else
+                currentcontrolMode = "Neck";
         }
 
         private void IsOut()
@@ -74,32 +85,24 @@ namespace EyeHelpers
             {
                 case "Moving":
                     if (direction == Direction.forward)
-                        EyeTypingManager.Instance.sendText = "<cmd=mobility:go0>";
-                        //Debug.Log("직진");
+                        chatSend.SendCommandText(commandList[0]);
                     else if (direction == Direction.backward)
-                        EyeTypingManager.Instance.sendText = "<cmd=mobility:back0>";
-                    //Debug.Log("후진");
+                        chatSend.SendCommandText(commandList[1]);
                     else if (direction == Direction.turn_left)
-                        EyeTypingManager.Instance.sendText = "<cmd=mobility:left0>";
-                    //Debug.Log("좌회전");
+                        chatSend.SendCommandText(commandList[2]);
                     else if (direction == Direction.turn_right)
-                        EyeTypingManager.Instance.sendText = "<cmd=mobility:right0>";
-                    //Debug.Log("우회전");
+                        chatSend.SendCommandText(commandList[3]);
                     break;
 
                 case "Neck":
-                    if (direction == Direction.forward)
-                        EyeTypingManager.Instance.sendText = "<cmd=head:up0>";
-                    //Debug.Log("위로");
-                    else if (direction == Direction.backward)
-                        EyeTypingManager.Instance.sendText = "<cmd=head:down0>";
-                    //Debug.Log("아래로");
-                    else if (direction == Direction.turn_left)
-                        EyeTypingManager.Instance.sendText = "<cmd=head:left0>";
-                    //Debug.Log("왼쪽으로");
-                    else if (direction == Direction.turn_right)
-                        EyeTypingManager.Instance.sendText = "<cmd=head:right0>";
-                    //Debug.Log("오른쪽으로");
+                    if (direction == Direction.forward)                    
+                        chatSend.SendCommandText(commandList[4]);                    
+                    else if (direction == Direction.backward)                    
+                        chatSend.SendCommandText(commandList[5]);                    
+                    else if (direction == Direction.turn_left)                    
+                        chatSend.SendCommandText(commandList[6]);                    
+                    else if (direction == Direction.turn_right)                    
+                        chatSend.SendCommandText(commandList[7]);                    
                     break;
             }
 

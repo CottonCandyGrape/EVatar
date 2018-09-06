@@ -355,7 +355,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 44604787}
-  - component: {fileID: 44604788}
   m_Layer: 0
   m_Name: Help_Btn_OnVideo
   m_TagString: Untagged
@@ -384,17 +383,46 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &44604788
+--- !u!1 &53748847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 53748849}
+  - component: {fileID: 53748848}
+  m_Layer: 0
+  m_Name: CircleButton Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &53748848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 44604786}
+  m_GameObject: {fileID: 53748847}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5abeeb77188e12c459b8cc6c77a16b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &53748849
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53748847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 866.8355, y: 360.2711, z: 23.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55537748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycaster: {fileID: 1498524032}
-  sendText: 
+  isDebugMode: 1
 --- !u!1 &122742053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,8 +2523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 5d693f49becf47d439de1040316485f8, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &198460942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3301,7 @@ MonoBehaviour:
   helpMenu: 2
   helpCommand: 
   hoverImage: {fileID: 21300000, guid: 736dd92117a34f14d9921e435fb7406c, type: 3}
+  chatSend: {fileID: 0}
 --- !u!1 &261282857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3572,7 +3601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5089,7 +5118,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 70, y: 0}
-  m_SizeDelta: {x: 71, y: 131}
+  m_SizeDelta: {x: 114, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &442134072
 MonoBehaviour:
@@ -5110,7 +5139,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a44d1d363afbda54692e322a2c02a98f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 445b06e18fe84e54f9dea55f26b1ed54, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5136,8 +5165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
-  currentcontrolMode: 
-  hoverImage: {fileID: 21300000, guid: 108ee5f51ffd07f47802a1c87c5fe122, type: 3}
+  hoverImage: {fileID: 21300000, guid: be66f3732111611498067889e46a9e5a, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &443196454
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,6 +5250,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uB300\uBCC0\uC774 \uBCF4\uACE0 \uC2F6\uC5B4\uC694"
   hoverImage: {fileID: 21300000, guid: 948738a908c53e345b0a40616366f541, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &444663948
 GameObject:
   m_ObjectHideFlags: 0
@@ -5719,6 +5749,7 @@ MonoBehaviour:
   helpMenu: 0
   helpCommand: 
   hoverImage: {fileID: 21300000, guid: 093ae3ddae0b60346ba7deff1f67ba65, type: 3}
+  chatSend: {fileID: 0}
 --- !u!1 &501263674
 GameObject:
   m_ObjectHideFlags: 0
@@ -5883,8 +5914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 5d693f49becf47d439de1040316485f8, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &513361962
 GameObject:
   m_ObjectHideFlags: 0
@@ -6215,6 +6246,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 533726195}
+  - component: {fileID: 533726196}
   m_Layer: 0
   m_Name: Circle_Btn
   m_TagString: Untagged
@@ -6245,6 +6277,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -262}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &533726196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 533726194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abeeb77188e12c459b8cc6c77a16b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553887202
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,6 +6606,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uC18C\uBCC0\uC774 \uBCF4\uACE0 \uC2F6\uC5B4\uC694"
   hoverImage: {fileID: 21300000, guid: 125a4ce9f86bf754e97e828266be41fc, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &583018092
 GameObject:
   m_ObjectHideFlags: 0
@@ -6646,6 +6690,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uCE68\uC744 \uBE7C \uC8FC\uC138\uC694"
   hoverImage: {fileID: 21300000, guid: 27edb567e999bfc458fa730181237ae5, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &595174559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7551,6 +7596,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uBC30 \uACE0\uD30C\uC694"
   hoverImage: {fileID: 21300000, guid: 14876f5d2df8aaa489e2efd293b5e2e9, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &692855623
 GameObject:
   m_ObjectHideFlags: 0
@@ -7559,7 +7605,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 692855624}
-  - component: {fileID: 692855625}
   m_Layer: 0
   m_Name: Keyboard_Btn_OnVideo
   m_TagString: Untagged
@@ -7588,17 +7633,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &692855625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 692855623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abeeb77188e12c459b8cc6c77a16b05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &709839368
 GameObject:
   m_ObjectHideFlags: 0
@@ -7680,8 +7714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 18d7943d875e8d54dae80bc792f11322, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &725086352
 GameObject:
   m_ObjectHideFlags: 0
@@ -8106,7 +8140,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -70, y: 0}
-  m_SizeDelta: {x: 71, y: 131}
+  m_SizeDelta: {x: 114, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &751605369
 MonoBehaviour:
@@ -8127,7 +8161,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: da88adb15c11fd648a675cd991dd41bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3ec89c43d1a6bb43a39d488c0acfc09, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8153,8 +8187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 3
-  currentcontrolMode: 
-  hoverImage: {fileID: 21300000, guid: 4e139f3ef5ca55d47b6f96d8924c23d6, type: 3}
+  hoverImage: {fileID: 21300000, guid: f95b9a74e44c2f143a8e6ac4f47d94f1, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &753629345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8403,6 +8437,7 @@ MonoBehaviour:
   helpMenu: 1
   helpCommand: 
   hoverImage: {fileID: 21300000, guid: c1bebfad09760ec4c9be74565a1956cd, type: 3}
+  chatSend: {fileID: 0}
 --- !u!1 &799540525
 GameObject:
   m_ObjectHideFlags: 0
@@ -8777,6 +8812,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uBB3C\uC744 \uC8FC\uC138\uC694"
   hoverImage: {fileID: 21300000, guid: e805fbc70884fc046af3c4bb157b4bf5, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &839784843
 GameObject:
   m_ObjectHideFlags: 0
@@ -10260,6 +10296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextInputBox: {fileID: 1077745198}
+  chatSend: {fileID: 1537771058}
 --- !u!114 &1077745198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10435,8 +10472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
-  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 108ee5f51ffd07f47802a1c87c5fe122, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1095801067
 GameObject:
   m_ObjectHideFlags: 0
@@ -10746,7 +10783,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157318180
 GameObject:
@@ -10839,7 +10876,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1158166901}
-  - component: {fileID: 1158166902}
   m_Layer: 0
   m_Name: Keyboard_Btn
   m_TagString: Untagged
@@ -10868,17 +10904,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1158166902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1158166900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abeeb77188e12c459b8cc6c77a16b05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1159785312
 GameObject:
   m_ObjectHideFlags: 0
@@ -11758,6 +11783,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uB300\uBCC0\uC774 \uC548 \uB098\uC640\uC694"
   hoverImage: {fileID: 21300000, guid: 01cf3df92c526e941b52e6dc87c29553, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1280893006
 GameObject:
   m_ObjectHideFlags: 0
@@ -13041,6 +13067,46 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353778491}
+--- !u!1 &1362078765
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1362078767}
+  - component: {fileID: 1362078766}
+  m_Layer: 0
+  m_Name: Network
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1362078766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1362078765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41dec107cda579e41ad847cd38b8fa2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1362078767
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1362078765}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 866.8355, y: 360.2711, z: 23.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1377322539
 GameObject:
   m_ObjectHideFlags: 0
@@ -13122,8 +13188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 3
-  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 4e139f3ef5ca55d47b6f96d8924c23d6, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1383702037
 GameObject:
   m_ObjectHideFlags: 0
@@ -14214,7 +14280,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1473135704}
-  - component: {fileID: 1473135705}
   m_Layer: 0
   m_Name: Video_Btn
   m_TagString: Untagged
@@ -14243,17 +14308,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1473135705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1473135703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abeeb77188e12c459b8cc6c77a16b05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1475688890
 GameObject:
   m_ObjectHideFlags: 0
@@ -14309,7 +14363,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: af9525a92e431a74085e7b71d196ab20, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec1183fd936ade74880ecb11ddedb596, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14335,7 +14389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 4
-  hoverImage: {fileID: 21300000, guid: 65f4363c70dcc20468341e5484922902, type: 3}
+  hoverImage: {fileID: 21300000, guid: e30d8d492ca6a7a4096d483e01c0d79d, type: 3}
 --- !u!1 &1480695134
 GameObject:
   m_ObjectHideFlags: 0
@@ -14680,7 +14734,7 @@ RectTransform:
   - {fileID: 211355039}
   - {fileID: 533726195}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14797,6 +14851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c399c9e754a7084984aed953366838f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_transport: {fileID: 1362078766}
 --- !u!4 &1537771059
 Transform:
   m_ObjectHideFlags: 0
@@ -14808,7 +14863,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539064639
 GameObject:
@@ -15142,6 +15197,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uAC00\uB798\uB97C \uBE7C\uC8FC\uC138\uC694"
   hoverImage: {fileID: 21300000, guid: fa14fceb3ef0b404881f13cdca34a872, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1565628965
 GameObject:
   m_ObjectHideFlags: 0
@@ -15555,8 +15611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  currentcontrolMode: 
   hoverImage: {fileID: 21300000, guid: 18d7943d875e8d54dae80bc792f11322, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1621549736
 GameObject:
   m_ObjectHideFlags: 0
@@ -15999,6 +16055,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uC18D\uC774 \uC4F0\uB824\uC694"
   hoverImage: {fileID: 21300000, guid: 97b4bbc0da2cab448800d332098f5438, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1656834046
 GameObject:
   m_ObjectHideFlags: 0
@@ -16373,7 +16430,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1702247473}
-  - component: {fileID: 1702247474}
   m_Layer: 0
   m_Name: Help_Btn
   m_TagString: Untagged
@@ -16402,17 +16458,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1702247474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1702247472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abeeb77188e12c459b8cc6c77a16b05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1703549338
 GameObject:
   m_ObjectHideFlags: 0
@@ -17321,6 +17366,7 @@ MonoBehaviour:
   helpMenu: 3
   helpCommand: "\uC228\uC26C\uAE30\uAC00 \uD798\uB4E4\uC5B4\uC694"
   hoverImage: {fileID: 21300000, guid: 5005fd4664082e84fac28536b5720291, type: 3}
+  chatSend: {fileID: 1537771058}
 --- !u!1 &1865215905
 GameObject:
   m_ObjectHideFlags: 0

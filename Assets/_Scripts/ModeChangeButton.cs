@@ -12,12 +12,12 @@ namespace EyeHelpers
 
         public Sprite hoverImage;
 
-        private Image image;
         private Sprite normalImage;
+        private Image image;
+        private Image centerImage;
         private Timer timer;
 
         //Button button;
-        Image centerImage;
         GameObject center, home, /*videoStreaming,*/ controller, moving, neck, blur, help, keyboard, circleBtn;
 
         Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
@@ -26,7 +26,8 @@ namespace EyeHelpers
         Color helpColor = new Color(0.1372549f, 0.3333333f, 0.4941177f);
 
         //DirectionButton directionButton;
-        string currentcontrolMode;
+        //string currentcontrolMode;
+        CircleButton circleButton;
 
         // Use this for initialization
         void Start()
@@ -34,6 +35,7 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
+            circleButton = new CircleButton();
             //directionButton = new DirectionButton();
             //currentcontrolMode = directionButton.currentcontrolMode;
 
@@ -81,101 +83,110 @@ namespace EyeHelpers
             {
                 case MType.video:
                     if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && ModeChangeManager.bHome)
-                    {//Keyboard Off, Help Off, Video Off (Home)
+                    {//Keyboard Off, Help Off, Video Off //Home에서 Video 켜기
                         centerImage.color = videoColor;
                         ModeChangeManager.bHome = false;
                         ModeChangeManager.bCircleBtn = true;
-                        //ChatSend chatSend = new ChatSend();
-                        //chatSend.SendCommandText();
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
-                    {//Keyboard Off, Help Off, Video On
+                    {//Keyboard Off, Help Off, Video On //Video에서 연결해제
                         centerImage.color = homeColor;
                         ModeChangeManager.bHome = true;
                         ModeChangeManager.bCircleBtn = false;
                     }
                     else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && ModeChangeManager.bHome)
-                    {//Keyboard On, Help Off, Video Off
+                    {//Keyboard On, Help Off, Video Off //Keyboard에서 연결하기
                         centerImage.color = videoColor;
                         ModeChangeManager.bKeyboard = false;
                         ModeChangeManager.bHome = false;
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHelp && ModeChangeManager.bHome)
-                    {//Keyboard Off, Help On, Video Off
+                    {//Keyboard Off, Help On, Video Off //Help에서 연결하기
                         centerImage.color = videoColor;
                         ModeChangeManager.bHelp = false;
                         ModeChangeManager.bHome = false;
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHelp && !ModeChangeManager.bHome)
-                    {//Keyboard On, Help Off, Video On
+                    {//Keyboard On, Help Off, Video On //Keyboard에서 연결해제
                         centerImage.color = keyboardColor;
                         keyboard.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHome = true;
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHelp && !ModeChangeManager.bHome)
-                    {//Keyboard Off, Help On, Video On
+                    {//Keyboard Off, Help On, Video On //Help에서 연결해제
                         centerImage.color = helpColor;
                         help.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHome = true;
+                        //circleButton.ChangeCircleButton();
                     }
                     break;
 
                 case MType.keyboard:
                     if (!ModeChangeManager.bKeyboard && ModeChangeManager.bHome)
-                    {//Keyboard Off, Video Off
+                    {//Keyboard Off, Video Off //Home에서 Keyboard 켜기
                         centerImage.color = keyboardColor;
                         keyboard.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bKeyboard = true;
                         ModeChangeManager.bCircleBtn = true;
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
-                    {//Keyboard Off, Video On
+                    {//Keyboard Off, Video On //Video에서 Keyboard 켜기
                         centerImage.color = keyboardColor;
                         keyboard.GetComponent<Image>().enabled = false;
                         ModeChangeManager.bKeyboard = true;
                         ModeChangeManager.bCircleBtn = true;
+                        //circleButton.ChangeCircleButton();
                     }
                     break;
 
                 case MType.help:
                     if (!ModeChangeManager.bHelp && ModeChangeManager.bHome)
-                    {//Help Off, Video Off
+                    {//Help Off, Video Off //Home에서 Help 켜기
                         centerImage.color = helpColor;
                         help.GetComponent<Image>().enabled = true;
                         ModeChangeManager.bHelp = true;
                         ModeChangeManager.bCircleBtn = true;
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (!ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
-                    {//Help Off, Video On
+                    {//Help Off, Video On //Video에서 Help 켜기
                         centerImage.color = helpColor;
                         help.GetComponent<Image>().enabled = false;
                         ModeChangeManager.bHelp = true;
                         ModeChangeManager.bCircleBtn = true;
+                        //circleButton.ChangeCircleButton();
                     }
                     break;
 
                 case MType.btn_x:
                     if (ModeChangeManager.bKeyboard && ModeChangeManager.bHome)
-                    {//Keyboard On, Video Off
+                    {//Keyboard On, Video Off //Keyboard 끄기
                         ModeChangeManager.bKeyboard = false;
                         ModeChangeManager.bCircleBtn = false;
                         centerImage.color = homeColor;
                     }
                     else if (ModeChangeManager.bHelp && ModeChangeManager.bHome)
-                    {//Help On, Video Off
+                    {//Help On, Video Off //Help 끄기
                         ModeChangeManager.bHelp = false;
                         ModeChangeManager.bCircleBtn = false;
                         centerImage.color = homeColor;
                     }
                     else if (ModeChangeManager.bKeyboard && !ModeChangeManager.bHome)
-                    {//Keyboard On, Video On
+                    {//Keyboard On, Video On 
                         ModeChangeManager.bKeyboard = false;
                         centerImage.color = videoColor;
+                        //circleButton.ChangeCircleButton();
                     }
                     else if (ModeChangeManager.bHelp && !ModeChangeManager.bHome)
                     {//Help On, Video On
                         ModeChangeManager.bHelp = false;
                         centerImage.color = videoColor;
+                        //circleButton.ChangeCircleButton();
                     }
                     break;
 

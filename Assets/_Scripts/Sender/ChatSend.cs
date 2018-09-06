@@ -6,7 +6,7 @@ namespace EyeHelpers
 {
     public class ChatSend : MonoBehaviour
     {
-        private TransportTCP m_transport;
+        [SerializeField] private TransportTCP m_transport;
 
         private ChatState m_state = ChatState.HOST_TYPE_SELECT;
 
@@ -41,8 +41,8 @@ namespace EyeHelpers
             Debug.Log(hostEntry.HostName);
             m_hostAddress = hostAddress.ToString();
 
-            GameObject go = new GameObject("Network");
-            m_transport = go.AddComponent<TransportTCP>();
+            //GameObject go = new GameObject("Network");
+            //m_transport = go.AddComponent<TransportTCP>();
 
             m_transport.RegisterEventHandler(OnEventHandling);
 
@@ -51,6 +51,8 @@ namespace EyeHelpers
             {
                 m_message[i] = new List<string>();
             }
+
+            SelectHostTypeGUI();
 
             //SetStartState();
         }
@@ -89,10 +91,10 @@ namespace EyeHelpers
             }
         }
 
-        void OnGUI()
-        {
-            SetStartState();
-        }
+        //void OnGUI()
+        //{
+        //    SetStartState();
+        //}
 
         private void SetStartState()
         {
@@ -111,7 +113,7 @@ namespace EyeHelpers
         void SelectHostTypeGUI()
         {
             //서버IP지정
-            m_hostAddress = "172.30.1.60";
+            m_hostAddress = "223.194.158.134";
 
             //채팅방무조건 들어가기 
             if (true)
@@ -125,39 +127,21 @@ namespace EyeHelpers
 
         }
 
-        public void SendCommandText()
+        public void SendCommandText(string message = "")
         {
-            Rect commentRect = new Rect(220, 450, 300, 30);
-            m_sendComment = GUI.TextField(commentRect, m_sendComment, 15);
+            // <tts=> 태그 제외하고 입력된 단어만 뽑기.
+            string word = message.Split(new char[] { '=' }, System.StringSplitOptions.RemoveEmptyEntries)[1];
+            word = word.Remove(word.Length - 1);
 
-            //송신하는 소스코드
-            bool isSent = GUI.Button(new Rect(530, 450, 100, 30), "말하기");
-            if (Event.current.isKey &&
-                Event.current.keyCode == KeyCode.Return)
+            // 입력된 단어가 있는 경우에만 TTS 전송 (안드로이드 장치로 전송).
+            if (!string.IsNullOrEmpty(word))
             {
-                if (m_sendComment == m_prevComment)
-                {
-                    isSent = true;
-                    m_prevComment = "";
-                }
-                else
-                {
-                    m_prevComment = m_sendComment;
-                }
-            }
-
-            if (isSent == true)
-            {
-                string message = m_sendComment;
-                //string message = "안녕하세요";
-                //string message = SendCommand.sendText;
-                //byte[] buffer = System.Text.Encoding.UTF8.GetBytes(EyeTypingManager.Instance.sendText);
                 byte[] buffer = System.Text.Encoding.UTF8.GetBytes(message);
-                m_transport.Send(buffer, buffer.Length);
-                Debug.Log(System.Text.Encoding.UTF8.GetString(buffer));
-                m_sendComment = "";
+                if (m_transport)
+                {
+                    m_transport.Send(buffer, buffer.Length);
+                }
             }
-
         }
 
         void OnApplicationQuit()

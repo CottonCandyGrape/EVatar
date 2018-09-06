@@ -18,6 +18,8 @@ namespace EyeHelpers
         private Sprite normalImage;
         private Timer timer;
 
+        [SerializeField] private ChatSend chatSend;
+
         GameObject breathing, breathingClicked, defecation, defecationClicked, meal, mealClicked;
 
 
@@ -86,29 +88,30 @@ namespace EyeHelpers
             switch (clickedMenu)
             {
                 case HelpMenu.breathing:
-                    //if (breathing.activeSelf) breathing.SetActive(false);
-                    //else breathing.SetActive(true);
                     OffCurrentMenu();
                     breathing.SetActive(false);
                     break;
 
                 case HelpMenu.defecation:
-                    //if (defecation.activeSelf) defecation.SetActive(false);
-                    //else defecation.SetActive(true);
                     OffCurrentMenu();
                     defecation.SetActive(false);
                     break;
 
                 case HelpMenu.meal:
-                    //if (meal.activeSelf) meal.SetActive(false);
-                    //else meal.SetActive(true);
                     OffCurrentMenu();
                     meal.SetActive(false);
                     break;
 
                 case HelpMenu.menuDetailText:
-                    Debug.Log(helpCommand);
-                    EyeTypingManager.Instance.TextToSpeech("<tts=" + helpCommand + ">");
+                    //Debug.Log(helpCommand);
+                    if (ModeChangeManager.bHome)
+                    {
+                        EyeTypingManager.Instance.TextToSpeech(helpCommand);
+                    }
+                    else
+                    {
+                        chatSend.SendCommandText("<tts=" + helpCommand + ">");
+                    }
                     break;
             }
 

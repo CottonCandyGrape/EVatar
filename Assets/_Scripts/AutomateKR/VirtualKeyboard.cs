@@ -16,14 +16,13 @@ namespace EyeHelpers
     };
 
         GameObject kor, shiftedKor, num, en, shiftedEn;
-        //string currentKeyboard = "bKor";
-        ChatSend chatSend;
+
+        [SerializeField] private ChatSend chatSend;
 
         void Awake()
         {
             VirtualKey._Keybord = this;
             FindKeyboardModeObject();
-            chatSend = new ChatSend();
         }
 
         void Update()
@@ -111,13 +110,9 @@ namespace EyeHelpers
                             }
                             else
                             {
-                                Debug.Log("일단 들어옴");
-                                TextInputBox.SetSendTextInInputField();
-                                Debug.Log("보낼 텍스트 초기화:" + EyeTypingManager.Instance.sendText);
-                                chatSend.SendCommandText();
-                                Debug.Log("보냈다");
+                                string message = TextInputBox.GetSendTextInInputField();
+                                chatSend.SendCommandText(message);
                                 Clear();
-                                Debug.Log("클리어");
                             }
                         }
                         break;

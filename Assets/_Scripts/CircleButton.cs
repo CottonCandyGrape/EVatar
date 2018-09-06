@@ -38,11 +38,11 @@ namespace EyeHelpers
             if (helpOnVideo.activeSelf) helpOnVideo.SetActive(false);
         }
 
-        private void ChangeCircleButton()
+        public void ChangeCircleButton()
         {
             if (!ModeChangeManager.bHome && !ModeChangeManager.bKeyboard
                 && !ModeChangeManager.bHelp)
-            {//Video Off //다른 모드에서 Video_Btn이 켜지지 않기 위함
+            {//Video On //다른 모드에서 Video_Btn이 켜지지 않기 위함
                 OffCurrentCircleButton();
                 video.SetActive(true);
             }
