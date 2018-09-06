@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycaster: {fileID: 1498524032}
-  isDebugMode: 0
+  isDebugMode: 1
 --- !u!1 &122742053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,7 +2488,7 @@ MonoBehaviour:
   direction: 1
   hoverImage: {fileID: 21300000, guid: 5d693f49becf47d439de1040316485f8, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 0}
 --- !u!1 &198460942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,7 +2714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &211355039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5276,7 +5276,7 @@ MonoBehaviour:
   direction: 2
   hoverImage: {fileID: 21300000, guid: be66f3732111611498067889e46a9e5a, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 0}
 --- !u!1 &443196454
 GameObject:
   m_ObjectHideFlags: 0
@@ -5535,6 +5535,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 469266495}
+  - component: {fileID: 469266496}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -5557,6 +5558,19 @@ Transform:
   m_Father: {fileID: 295479347}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &469266496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469266494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab225f081cb1e34489e59e9e072b7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notice: {fileID: 324445783}
+  noticeText: {fileID: 236180126}
 --- !u!1 &481194372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6026,7 +6040,7 @@ MonoBehaviour:
   direction: 1
   hoverImage: {fileID: 21300000, guid: 5d693f49becf47d439de1040316485f8, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 469266496}
 --- !u!1 &513361962
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,7 +7149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &613885272
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7828,7 +7842,7 @@ MonoBehaviour:
   direction: 0
   hoverImage: {fileID: 21300000, guid: 18d7943d875e8d54dae80bc792f11322, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 469266496}
 --- !u!1 &725086352
 GameObject:
   m_ObjectHideFlags: 0
@@ -8303,7 +8317,7 @@ MonoBehaviour:
   direction: 3
   hoverImage: {fileID: 21300000, guid: f95b9a74e44c2f143a8e6ac4f47d94f1, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 0}
 --- !u!1 &753629345
 GameObject:
   m_ObjectHideFlags: 0
@@ -10593,7 +10607,7 @@ MonoBehaviour:
   direction: 2
   hoverImage: {fileID: 21300000, guid: 108ee5f51ffd07f47802a1c87c5fe122, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 469266496}
 --- !u!1 &1095801067
 GameObject:
   m_ObjectHideFlags: 0
@@ -11599,7 +11613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1246884968
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13310,7 +13324,7 @@ MonoBehaviour:
   direction: 3
   hoverImage: {fileID: 21300000, guid: 4e139f3ef5ca55d47b6f96d8924c23d6, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 469266496}
 --- !u!1 &1383702037
 GameObject:
   m_ObjectHideFlags: 0
@@ -15735,7 +15749,7 @@ MonoBehaviour:
   direction: 0
   hoverImage: {fileID: 21300000, guid: 18d7943d875e8d54dae80bc792f11322, type: 3}
   chatSend: {fileID: 1537771058}
-  noticeText: {fileID: 236180126}
+  robotControl: {fileID: 0}
 --- !u!1 &1621549736
 GameObject:
   m_ObjectHideFlags: 0
