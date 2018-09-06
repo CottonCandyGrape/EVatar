@@ -15,6 +15,7 @@ namespace EyeHelpers
         private Image image;
         private Sprite normalImage;
         private Timer timer;
+        private int horizontalBase, verticalBase;
 
         private string currentcontrolMode = string.Empty;
         private string[] commandList = {
@@ -29,6 +30,7 @@ namespace EyeHelpers
         };
 
         [SerializeField] private ChatSend chatSend;
+        [SerializeField] private Text noticeText;
 
         // Use this for initialization
         void Start()
@@ -36,6 +38,8 @@ namespace EyeHelpers
             image = GetComponent<Image>();
             normalImage = image.sprite;
             timer = new Timer();
+            horizontalBase = 0;
+            verticalBase = 0;
         }
 
         // Update is called once per frame
@@ -79,6 +83,11 @@ namespace EyeHelpers
             timer.Reset();
         }
 
+        private void RobotControl()
+        {
+            //if () ;
+        }
+
         void Typing()
         {
             switch (currentcontrolMode)
@@ -95,14 +104,25 @@ namespace EyeHelpers
                     break;
 
                 case "Neck":
-                    if (direction == Direction.forward)                    
-                        chatSend.SendCommandText(commandList[4]);                    
-                    else if (direction == Direction.backward)                    
-                        chatSend.SendCommandText(commandList[5]);                    
-                    else if (direction == Direction.turn_left)                    
-                        chatSend.SendCommandText(commandList[6]);                    
-                    else if (direction == Direction.turn_right)                    
-                        chatSend.SendCommandText(commandList[7]);                    
+                    if (direction == Direction.forward)
+                    {
+                        chatSend.SendCommandText(commandList[4]);
+                    }
+                    else if (direction == Direction.backward)
+                    {
+                        chatSend.SendCommandText(commandList[5]);
+                    }
+                    else if (direction == Direction.turn_left)
+                    {
+                        chatSend.SendCommandText(commandList[6]);
+                        horizontalBase -= 1;
+                    }
+                        
+                    else if (direction == Direction.turn_right)
+                    {
+                        chatSend.SendCommandText(commandList[7]);
+                        horizontalBase += 1;
+                    }                        
                     break;
             }
 
