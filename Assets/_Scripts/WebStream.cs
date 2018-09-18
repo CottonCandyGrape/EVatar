@@ -12,7 +12,7 @@ namespace Test
         //public MeshRenderer frame;    //Mesh for displaying video
         public RawImage image;
 
-        private string sourceURL = "http://172.30.1.60:8080/video";
+        private string sourceURL = "http://223.194.131.97:8080/video";
         private Texture2D texture;
         private Stream stream;
 

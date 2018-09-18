@@ -113,7 +113,7 @@ namespace EyeHelpers
         void SelectHostTypeGUI()
         {
             //서버IP지정
-            m_hostAddress = "223.194.158.134";
+            m_hostAddress = "223.194.131.97";
 
             //채팅방무조건 들어가기 
             if (true)

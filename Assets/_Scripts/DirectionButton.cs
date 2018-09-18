@@ -18,14 +18,14 @@ namespace EyeHelpers
 
         private string currentcontrolMode = string.Empty;
         private string[] commandList = {
-            "<cmd=mobility:go0>",
-            "<cmd=mobility:back0>",
-            "<cmd=mobility:left0>",
-            "<cmd=mobility:right0>",
-            "<cmd=head:up0>",
-            "<cmd=head:down0>",
-            "<cmd=head:left0>",
-            "<cmd=head:right0>"
+            "<cmd=mobility:go1>",
+            "<cmd=mobility:back1>",
+            "<cmd=mobility:left1>",
+            "<cmd=mobility:right1>",
+            "<cmd=head:up1>",
+            "<cmd=head:down1>",
+            "<cmd=head:left1>",
+            "<cmd=head:right1>"
         };
 
         [SerializeField] private ChatSend chatSend;
