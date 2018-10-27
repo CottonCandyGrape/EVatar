@@ -314,20 +314,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 6310d1cea6c80c842afa869637ba45c9, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &32605840
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1245,18 +1245,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: fa14fceb3ef0b404881f13cdca34a872, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &84987147
@@ -1647,20 +1647,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: e2624ee8719d56841bf74e33d16e11ac, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &128460157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3020,7 +3020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &211355039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3653,7 +3653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 2
   helpCommand: 
-  hoverImage: {fileID: 21300000, guid: 736dd92117a34f14d9921e435fb7406c, type: 3}
+  gaugeImage: {fileID: 128460156}
   chatSend: {fileID: 0}
 --- !u!1 &261282857
 GameObject:
@@ -5578,18 +5578,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 97b4bbc0da2cab448800d332098f5438, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &417382228
@@ -5837,7 +5837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uB300\uBCC0\uC774 \uBCF4\uACE0 \uC2F6\uC5B4\uC694"
-  hoverImage: {fileID: 21300000, guid: 948738a908c53e345b0a40616366f541, type: 3}
+  gaugeImage: {fileID: 952211616}
   chatSend: {fileID: 1537771058}
 --- !u!1 &444663948
 GameObject:
@@ -6168,18 +6168,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 01cf3df92c526e941b52e6dc87c29553, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &485927896
@@ -6426,7 +6426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 0
   helpCommand: 
-  hoverImage: {fileID: 21300000, guid: 093ae3ddae0b60346ba7deff1f67ba65, type: 3}
+  gaugeImage: {fileID: 1436189893}
   chatSend: {fileID: 0}
 --- !u!1 &501263674
 GameObject:
@@ -6941,7 +6941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &533726195
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7298,7 +7298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uC18C\uBCC0\uC774 \uBCF4\uACE0 \uC2F6\uC5B4\uC694"
-  hoverImage: {fileID: 21300000, guid: 125a4ce9f86bf754e97e828266be41fc, type: 3}
+  gaugeImage: {fileID: 1490199740}
   chatSend: {fileID: 1537771058}
 --- !u!1 &583018092
 GameObject:
@@ -7384,7 +7384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uCE68\uC744 \uBE7C \uC8FC\uC138\uC694"
-  hoverImage: {fileID: 21300000, guid: 27edb567e999bfc458fa730181237ae5, type: 3}
+  gaugeImage: {fileID: 2090546600}
   chatSend: {fileID: 1537771058}
 --- !u!1 &595174559
 GameObject:
@@ -8304,7 +8304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uBC30 \uACE0\uD30C\uC694"
-  hoverImage: {fileID: 21300000, guid: 14876f5d2df8aaa489e2efd293b5e2e9, type: 3}
+  gaugeImage: {fileID: 1194653926}
   chatSend: {fileID: 1537771058}
 --- !u!1 &692855623
 GameObject:
@@ -9161,7 +9161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 1
   helpCommand: 
-  hoverImage: {fileID: 21300000, guid: c1bebfad09760ec4c9be74565a1956cd, type: 3}
+  gaugeImage: {fileID: 32605839}
   chatSend: {fileID: 0}
 --- !u!1 &799540525
 GameObject:
@@ -9543,7 +9543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uBB3C\uC744 \uC8FC\uC138\uC694"
-  hoverImage: {fileID: 21300000, guid: e805fbc70884fc046af3c4bb157b4bf5, type: 3}
+  gaugeImage: {fileID: 1678250872}
   chatSend: {fileID: 1537771058}
 --- !u!1 &839784843
 GameObject:
@@ -9874,11 +9874,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8df5656c4148c804b8113eb406c39aab, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &865755411
@@ -10315,18 +10315,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 948738a908c53e345b0a40616366f541, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &952211617
@@ -12171,18 +12171,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 14876f5d2df8aaa489e2efd293b5e2e9, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1194653927
@@ -12408,18 +12408,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 5005fd4664082e84fac28536b5720291, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1210734534
@@ -13102,7 +13102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uB300\uBCC0\uC774 \uC548 \uB098\uC640\uC694"
-  hoverImage: {fileID: 21300000, guid: 01cf3df92c526e941b52e6dc87c29553, type: 3}
+  gaugeImage: {fileID: 485927895}
   chatSend: {fileID: 1537771058}
 --- !u!1 &1280893006
 GameObject:
@@ -15597,20 +15597,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: f4d45a8c657b5b3459a00b685283aadf, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1436189894
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16165,18 +16165,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 125a4ce9f86bf754e97e828266be41fc, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1490199741
@@ -16833,7 +16833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uAC00\uB798\uB97C \uBE7C\uC8FC\uC138\uC694"
-  hoverImage: {fileID: 21300000, guid: fa14fceb3ef0b404881f13cdca34a872, type: 3}
+  gaugeImage: {fileID: 84987146}
   chatSend: {fileID: 1537771058}
 --- !u!1 &1565628965
 GameObject:
@@ -17772,7 +17772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uC18D\uC774 \uC4F0\uB824\uC694"
-  hoverImage: {fileID: 21300000, guid: 97b4bbc0da2cab448800d332098f5438, type: 3}
+  gaugeImage: {fileID: 417382227}
   chatSend: {fileID: 1537771058}
 --- !u!1 &1656834046
 GameObject:
@@ -17990,18 +17990,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e805fbc70884fc046af3c4bb157b4bf5, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1678250873
@@ -19170,7 +19170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helpMenu: 3
   helpCommand: "\uC228\uC26C\uAE30\uAC00 \uD798\uB4E4\uC5B4\uC694"
-  hoverImage: {fileID: 21300000, guid: 5005fd4664082e84fac28536b5720291, type: 3}
+  gaugeImage: {fileID: 1210734533}
   chatSend: {fileID: 1537771058}
 --- !u!1 &1865215905
 GameObject:
@@ -21043,18 +21043,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 27edb567e999bfc458fa730181237ae5, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 3
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &2090546601

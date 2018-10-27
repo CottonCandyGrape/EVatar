@@ -12,24 +12,18 @@ namespace EyeHelpers
         public HelpMenu helpMenu = HelpMenu.breathing;
         public string helpCommand = string.Empty;
 
-        public Sprite hoverImage;
-
-        private Image image;
-        private Sprite normalImage;
+        [SerializeField] private Image gaugeImage;
         private Timer timer;
+        private float typingTime = 1f;
 
         [SerializeField] private ChatSend chatSend;
 
         GameObject breathing, breathingClicked, defecation, defecationClicked, meal, mealClicked;
 
-
         // Use this for initialization
         void Start()
         {
-            image = GetComponent<Image>();
-            normalImage = image.sprite;
             timer = new Timer();
-
             FindHelpButton();
         }
 
@@ -50,11 +44,9 @@ namespace EyeHelpers
         }
 
         private void IsOut()
-        {
-            // 버튼 벗어났는지 확인.
+        {   // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {
-                image.sprite = normalImage;
                 ResetTimer();
             }
         }
@@ -67,12 +59,18 @@ namespace EyeHelpers
                 Typing();
             }
 
-            image.sprite = hoverImage;
+            UpdateGauge(timer.GetElapsedTime / typingTime);
+        }
+
+        private void UpdateGauge(float amount)
+        {
+            gaugeImage.fillAmount = amount;
         }
 
         public void ResetTimer()
         {
             timer.Reset();
+            gaugeImage.fillAmount = 0f;
         }
 
         private void OffCurrentMenu()
