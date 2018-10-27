@@ -6,7 +6,7 @@ namespace EyeHelpers
 {
     public class CircleButton : MonoBehaviour
     {
-        GameObject video, keyboard, keyboardOnVideo, help, helpOnVideo;
+        GameObject videoCtrl, videoNoCtrl, keyboard, keyboardOnVideo, help, helpOnVideo;
 
         // Use this for initialization
         void Start()
@@ -22,7 +22,8 @@ namespace EyeHelpers
 
         private void FindCircleButton()
         {
-            video = GameObject.Find("Video_Btn");
+            videoCtrl = GameObject.Find("Video_Btn_Ctrl");
+            videoNoCtrl = GameObject.Find("Video_Btn_NoCtrl");
             keyboard = GameObject.Find("Keyboard_Btn");
             keyboardOnVideo = GameObject.Find("Keyboard_Btn_OnVideo");
             help = GameObject.Find("Help_Btn");
@@ -31,7 +32,8 @@ namespace EyeHelpers
 
         private void OffCurrentCircleButton()
         {
-            if (video.activeSelf) video.SetActive(false);
+            if (videoCtrl.activeSelf) videoCtrl.SetActive(false);
+            if (videoNoCtrl.activeSelf) videoNoCtrl.SetActive(false);
             if (keyboard.activeSelf) keyboard.SetActive(false);
             if (keyboardOnVideo.activeSelf) keyboardOnVideo.SetActive(false);
             if (help.activeSelf) help.SetActive(false);
@@ -41,10 +43,16 @@ namespace EyeHelpers
         public void ChangeCircleButton()
         {
             if (!ModeChangeManager.bHome && !ModeChangeManager.bKeyboard
-                && !ModeChangeManager.bHelp)
+                && !ModeChangeManager.bHelp && !ModeChangeManager.bShow)
             {//Video On //다른 모드에서 Video_Btn이 켜지지 않기 위함
                 OffCurrentCircleButton();
-                video.SetActive(true);
+                videoCtrl.SetActive(true);
+            }
+            else if (!ModeChangeManager.bHome && !ModeChangeManager.bKeyboard
+               && !ModeChangeManager.bHelp && !ModeChangeManager.bHide)
+            {
+                OffCurrentCircleButton();
+                videoNoCtrl.SetActive(true);
             }
             else if (ModeChangeManager.bKeyboard && ModeChangeManager.bHome)
             {//Keyboard On, Video Off                

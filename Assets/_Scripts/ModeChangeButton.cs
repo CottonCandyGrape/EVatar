@@ -7,15 +7,15 @@ namespace EyeHelpers
 {
     public class ModeChangeButton : MonoBehaviour
     {
-        public enum MType { video, keyboard, help, btn_x, controller }
+        public enum MType { video, keyboard, help, btn_x, controllerMode, controllerShow }
         public MType modeType = MType.video;
 
-        [SerializeField]private Image gaugeImage;
+        [SerializeField] private Image gaugeImage;
         private Image centerImage;
         private Timer timer;
         private float typingTime = 1f;
 
-        GameObject center, home, controller, moving, neck, blur, help, keyboard, circleBtn;
+        GameObject center, home, controller, moving, neck, hide, show, blur, help, keyboard, circleBtn;
 
         Color homeColor = new Color(0.7411765f, 0.2117647f, 0.3529412f);
         Color videoColor = new Color(0.7215686f, 0.1176471f, 0.2352941f);
@@ -183,7 +183,7 @@ namespace EyeHelpers
                     }
                     break;
 
-                case MType.controller:
+                case MType.controllerMode:
                     if (ModeChangeManager.bMoving)
                     {// Moving On
                         ModeChangeManager.bMoving = false;
@@ -193,6 +193,21 @@ namespace EyeHelpers
                     {// Neck On
                         ModeChangeManager.bMoving = true;
                         ModeChangeManager.bNeck = false;
+                    }
+                    break;
+
+                case MType.controllerShow:
+                    if (ModeChangeManager.bHide)
+                    {
+                        ModeChangeManager.bHide = false;
+                        ModeChangeManager.bShow = true;
+                        circleButton.ChangeCircleButton();
+                    }
+                    else
+                    {
+                        ModeChangeManager.bHide = true;
+                        ModeChangeManager.bShow = false;
+                        circleButton.ChangeCircleButton();                        
                     }
                     break;
             }
@@ -205,6 +220,8 @@ namespace EyeHelpers
             home.SetActive(ModeChangeManager.bHome);
             moving.SetActive(ModeChangeManager.bMoving);
             neck.SetActive(ModeChangeManager.bNeck);
+            //hide.SetActive(ModeChangeManager.bHide);
+            //show.SetActive(ModeChangeManager.bShow);
             blur.SetActive(ModeChangeManager.bBlur);
             help.SetActive(ModeChangeManager.bHelp);
             keyboard.SetActive(ModeChangeManager.bKeyboard);
@@ -219,6 +236,8 @@ namespace EyeHelpers
             controller = GameObject.Find("Controller");
             moving = GameObject.Find("Moving_Controller");
             neck = GameObject.Find("Neck_Controller");
+            //hide = GameObject.Find("Video_Btn_Ctrl");
+            //show = GameObject.Find("Video_Btn_NoCtrl");
             blur = GameObject.Find("BLUR");
             help = GameObject.Find("Help");
             keyboard = GameObject.Find("Keyboard");
@@ -237,7 +256,8 @@ namespace EyeHelpers
         private void OnOffController()
         {
             if ((!ModeChangeManager.bHome && ModeChangeManager.bKeyboard) ||
-                (!ModeChangeManager.bHome && ModeChangeManager.bHelp))
+                (!ModeChangeManager.bHome && ModeChangeManager.bHelp) ||
+                ModeChangeManager.bShow)
                 controller.SetActive(false);
             else
                 controller.SetActive(true);
