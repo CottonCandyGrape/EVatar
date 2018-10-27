@@ -10,12 +10,10 @@ namespace EyeHelpers
         public enum MType { video, keyboard, help, btn_x, controller }
         public MType modeType = MType.video;
 
-        public Sprite hoverImage;
-
-        private Sprite normalImage;
-        private Image image;
+        [SerializeField]private Image gaugeImage;
         private Image centerImage;
         private Timer timer;
+        private float typingTime = 1f;
 
         GameObject center, home, controller, moving, neck, blur, help, keyboard, circleBtn;
 
@@ -29,10 +27,7 @@ namespace EyeHelpers
         // Use this for initialization
         void Start()
         {
-            image = GetComponent<Image>();
-            normalImage = image.sprite;
             timer = new Timer();
-
             FindModeObject();
         }
 
@@ -45,11 +40,9 @@ namespace EyeHelpers
         }
 
         private void IsOut()
-        {
-            // 버튼 벗어났는지 확인.
+        {   // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {
-                image.sprite = normalImage;
                 ResetTimer();
             }
         }
@@ -57,17 +50,23 @@ namespace EyeHelpers
         public void UpdateTimer(float deltaTime)
         {
             timer.Update(deltaTime);
-            if (timer.HasPastSince(1f))
+            if (timer.HasPastSince(typingTime))
             {
                 Typing();
             }
 
-            image.sprite = hoverImage;
+            UpdateGauge(timer.GetElapsedTime / typingTime);
+        }
+
+        private void UpdateGauge(float amount)
+        {
+            gaugeImage.fillAmount = amount;
         }
 
         public void ResetTimer()
         {
             timer.Reset();
+            gaugeImage.fillAmount = 0f;
         }
 
         void Typing()

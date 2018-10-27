@@ -15,7 +15,7 @@ public class TTSUnityWin : MonoBehaviour
         input = GameObject.Find("InputField1").GetComponent<InputField>();
     }
 
-    void Ttsstar()
+    public void Ttsstar()
     {
         voice.Volume = 100; // Volume (no xml)
         voice.Rate = 0;  //   Rate (no xml)
