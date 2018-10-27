@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 0
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 1242009147}
   circleButton: {fileID: 533726196}
 --- !u!114 &59604909
 MonoBehaviour:
@@ -1077,7 +1077,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74573714
 MonoBehaviour:
@@ -1092,20 +1092,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dd66fa3f4b6a17b42b692ad6cb052994, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &74573715
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 2
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 1094827240}
   circleButton: {fileID: 533726196}
 --- !u!114 &156315893
 MonoBehaviour:
@@ -4136,7 +4136,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &302509187
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4714,7 +4714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 0
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 1365583736}
   circleButton: {fileID: 533726196}
 --- !u!114 &330714875
 MonoBehaviour:
@@ -5400,7 +5400,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 632b964b6f203fb43b99ba67a6ca68b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7d9b8ecc2527c7469c6c52fd15e54f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8560,7 +8560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 0
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 1176285309}
   circleButton: {fileID: 533726196}
 --- !u!114 &733727324
 MonoBehaviour:
@@ -8809,7 +8809,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3f63b9d1b325c324a8d8bfc324161148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1d543f41abc47d40aa5b24e6390704c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9380,7 +9380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 1
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 963076653}
   circleButton: {fileID: 533726196}
 --- !u!114 &823004779
 MonoBehaviour:
@@ -9401,7 +9401,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 632b964b6f203fb43b99ba67a6ca68b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7d9b8ecc2527c7469c6c52fd15e54f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10147,7 +10147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 0
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 74573714}
   circleButton: {fileID: 533726196}
 --- !u!114 &916630546
 MonoBehaviour:
@@ -10368,8 +10368,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1639.9999, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963076653
 MonoBehaviour:
@@ -10384,20 +10384,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3f63b9d1b325c324a8d8bfc324161148, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 1a74ff6cdc6fb28478397e4718a43325, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &963076654
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11397,8 +11397,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1639.9999, y: -240}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094827240
 MonoBehaviour:
@@ -11413,20 +11413,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 734f728992cbd0848a0ac7259bf449d7, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 0d26ac291f1c64b418b51d743fb9f889, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1094827241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11964,7 +11964,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3f63b9d1b325c324a8d8bfc324161148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1d543f41abc47d40aa5b24e6390704c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12012,7 +12012,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176285309
 MonoBehaviour:
@@ -12027,20 +12027,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dd66fa3f4b6a17b42b692ad6cb052994, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1176285310
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12673,7 +12673,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242009147
 MonoBehaviour:
@@ -12688,20 +12688,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1210a38ba9de55240a7bfda0aece7e30, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dd66fa3f4b6a17b42b692ad6cb052994, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1242009148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13010,7 +13010,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1260579353
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14476,7 +14476,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365583736
 MonoBehaviour:
@@ -14491,20 +14491,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 109a1f31e6c516d4185d6dcafde611d1, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1365583737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14841,7 +14841,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 208, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388537806
 MonoBehaviour:
@@ -14856,20 +14856,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 109a1f31e6c516d4185d6dcafde611d1, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1388537807
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17064,7 +17064,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 0
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!222 &1588238024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18555,7 +18555,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 632b964b6f203fb43b99ba67a6ca68b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7d9b8ecc2527c7469c6c52fd15e54f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19878,7 +19878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeType: 0
-  gaugeImage: {fileID: 0}
+  gaugeImage: {fileID: 1388537806}
   circleButton: {fileID: 533726196}
 --- !u!114 &1972953441
 MonoBehaviour:
