@@ -10,7 +10,8 @@ namespace EyeHelpers
         public enum kType { kCharacter, kOther, kReturn, kSpace, kBackspace, kShift, kTab, kCapsLock, kHangul, kSpeak, kNum }
         public char KeyCharacter;
         public kType KeyType = kType.kCharacter;
-        public Sprite hoverImage;
+        [SerializeField] private Image gaugeImage;
+        private float typingTime = 0.5f;
 
         private bool mKeepPresed;
         public bool KeepPressed
@@ -19,14 +20,10 @@ namespace EyeHelpers
             get { return mKeepPresed; }
         }
 
-        private Image image;
-        private Sprite normalImage;
         private Timer timer;
 
         private void Awake()
         {
-            image = GetComponent<Image>();
-            normalImage = image.sprite;
             timer = new Timer();
         }
 
@@ -35,7 +32,6 @@ namespace EyeHelpers
             // 버튼 벗어났는지 확인.
             if (timer.GetLastGameTime != 0f && (Time.realtimeSinceStartup - timer.GetLastGameTime) > Time.deltaTime * 3f)
             {
-                image.sprite = normalImage;
                 ResetTimer();
             }
         }
@@ -43,12 +39,17 @@ namespace EyeHelpers
         public void UpdateTimer(float deltaTime)
         {
             timer.Update(deltaTime);
-            if (timer.HasPastSince(0.5f))
+            if (timer.HasPastSince(typingTime))
             {
                 Typing();
             }
 
-            image.sprite = hoverImage;
+            UpdateGauge(timer.GetElapsedTime / typingTime);
+        }
+
+        private void UpdateGauge(float amount)
+        {
+            gaugeImage.fillAmount = amount;
         }
 
         void Typing()
@@ -64,6 +65,7 @@ namespace EyeHelpers
         public void ResetTimer()
         {
             timer.Reset();
+            gaugeImage.fillAmount = 0f;
         }
     }
 }
